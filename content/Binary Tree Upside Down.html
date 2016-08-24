@@ -1,0 +1,1195 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml"><head><script type="text/javascript" src="https://bam.nr-data.net/1/8d5fb92f6e?a=2098939&amp;v=974.7d740e1&amp;to=ZwMAYEdSCktRWxZRXV5JJEFbUBBRX1ZNSEBfBA5RWEABTB5OC11FQ1wzQVBAEFFfViZdRlEPDmJcVhMWV10W&amp;rst=1428&amp;ref=https://leetcode.com/problems/binary-tree-upside-down/&amp;ap=181&amp;be=388&amp;fe=1017&amp;dc=433&amp;perf=%7B%22timing%22:%7B%22of%22:1472001455392,%22n%22:0,%22u%22:366,%22ue%22:375,%22f%22:1,%22dn%22:1,%22dne%22:1,%22c%22:1,%22ce%22:1,%22rq%22:2,%22rp%22:364,%22rpe%22:366,%22dl%22:382,%22di%22:821,%22ds%22:821,%22de%22:996,%22dc%22:1404,%22l%22:1404,%22le%22:1423%7D,%22navigation%22:%7B%7D%7D&amp;jsonp=NREUM.setToken"></script><script type="text/javascript" src="//m.addthis.com/live/red_lojson/300lo.json?si=57bcf5b07f075ae6&amp;bl=1&amp;pdt=391&amp;sid=57bcf5b07f075ae6&amp;pub=ra-54828cb901e9e86a&amp;rev=v7.4.4-wp&amp;ln=en&amp;pc=men&amp;cb=0&amp;ab=-&amp;dp=leetcode.com&amp;fp=problems%2Fbinary-tree-upside-down%2F&amp;fr=&amp;of=0&amp;pd=0&amp;irt=1&amp;vcl=2&amp;md=0&amp;ct=1&amp;tct=0&amp;abt=0&amp;cdn=0&amp;lnlc=US&amp;pi=1&amp;rb=0&amp;gen=100&amp;chr=UTF-8&amp;colc=1472001456812&amp;jsl=1&amp;uvs=57bcf49d638b9edd0d7&amp;skipb=1&amp;callback=addthis.cbs.oln9_441588203350479660"></script><script type="text/javascript" src="//m.addthisedge.com/live/boost?pub=ra-54828cb901e9e86a&amp;callback=_ate.track.config_resp"></script><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+    <meta charset="utf-8" /><script src="//cdn.iubenda.com/iubenda.js"></script><script src="https://js-agent.newrelic.com/nr-974.min.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o&lt;n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(u(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(2),u=t(3),c=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&amp;&amp;(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit"],p="api-",l=p+"ixn-";a(s,function(t,e){f[e]=o(p+e,!0,"api")}),f.addPageAction=o(p+"addPageAction",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){d[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&amp;&amp;(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],2:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&amp;&amp;(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],3:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&amp;&amp;(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o&lt;0?0:o);++r&lt;o;)i[r]=t[e+r];return i}e.exports=r},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&amp;&amp;t instanceof r?t:t?u(t,a,i):i()}function n(n,r,o){t&amp;&amp;t(n,r,o);for(var i=e(o),a=l(n),u=a.length,c=0;c&lt;u;c++)a[c].apply(i,r);var s=f[m[n]];return s&amp;&amp;s.push([w,n,r,i]),i}function p(t,e){g[t]=l(t).concat(e)}function l(t){return g[t]||[]}function d(t){return s[t]=s[t]||o(n)}function v(t,e){c(t,function(t,n){e=e||"feature",m[n]=e,e in f||(f[e]=[])})}var g={},m={},w={on:p,emit:n,get:d,listeners:l,context:e,buffer:v};return w}function i(){return new r}var a="nr@context",u=t("gos"),c=t(2),f={},s={},p=e.exports=o();p.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&amp;&amp;Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&amp;&amp;"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!h++){var t=y.info=NREUM.info,e=s.getElementsByTagName("script")[0];if(t&amp;&amp;t.licenseKey&amp;&amp;t.applicationID&amp;&amp;e){c(m,function(e,n){t[e]||(t[e]=n)});var n="https"===g.split(":")[0]||t.sslForHttp;y.proto=n?"https://":"http://",u("mark",["onload",a()],null,"api");var r=s.createElement("script");r.src=y.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===s.readyState&amp;&amp;i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=t("handle"),c=t(2),f=window,s=f.document,p="addEventListener",l="attachEvent",d=f.XMLHttpRequest,v=d&amp;&amp;d.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:d,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(1);var g=""+location,m={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-974.min.js"},w=d&amp;&amp;v&amp;&amp;v[p]&amp;&amp;!/CriOS/.test(navigator.userAgent),y=e.exports={offset:a(),origin:g,features:{},xhrWrappable:w};s[p]?(s[p]("DOMContentLoaded",i,!1),f[p]("load",r,!1)):(s[l]("onreadystatechange",o),f[l]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"8d5fb92f6e","agent":"","transactionName":"ZwMAYEdSCktRWxZRXV5JJEFbUBBRX1ZNSEBfBA5RWEABTB5OC11FQ1wzQVBAEFFfViZdRlEPDmJcVhMWV10W","applicationID":"2098939","errorBeacon":"bam.nr-data.net","applicationTime":181}</script>
+    <title>Binary Tree Upside Down | LeetCode OJ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="&#10;Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.&#10;&#10;&#10;For example:&#10;Given a binary tree {1,2,3,4,5},&#10;&#10;    1&#10;   / \&#10;  2   3&#10; / \&#10;4   5&#10;&#10;&#10;&#10;return the root of the binary tree [4,5,2,#,#,3,1].&#10;&#10;   4&#10;  / \&#10; 5   2&#10;    / \&#10;   3   1  &#10;&#10;&#10;&#10;confused what &quot;{1,#,2,3}&quot; means? &gt; read more on how binary tree is serialized on OJ.&#10;&#10;OJ's Binary Tree Serialization:&#10;&#10;The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.&#10;&#10;&#10;Here's an example:&#10;&#10;   1&#10;  / \&#10; 2   3&#10;    /&#10;   4&#10;    \&#10;     5&#10;&#10;The above binary tree is serialized as &quot;{1,2,3,#,#,4,#,#,5}&quot;. &#10;&#10;" />
+    <meta property="og:title" content="Binary Tree Upside Down | LeetCode OJ" />
+    <meta property="og:image" content="/static/images/logolarge.jpg" />
+    <meta property="og:description" content="&#10;Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.&#10;&#10;&#10;For example:&#10;Given a binary tree {1,2,3,4,5},&#10;&#10;    1&#10;   / \&#10;  2   3&#10; / \&#10;4   5&#10;&#10;&#10;&#10;return the root of the binary tree [4,5,2,#,#,3,1].&#10;&#10;   4&#10;  / \&#10; 5   2&#10;    / \&#10;   3   1  &#10;&#10;&#10;&#10;confused what &quot;{1,#,2,3}&quot; means? &gt; read more on how binary tree is serialized on OJ.&#10;&#10;OJ's Binary Tree Serialization:&#10;&#10;The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.&#10;&#10;&#10;Here's an example:&#10;&#10;   1&#10;  / \&#10; 2   3&#10;    /&#10;   4&#10;    \&#10;     5&#10;&#10;The above binary tree is serialized as &quot;{1,2,3,#,#,4,#,#,5}&quot;. &#10;&#10;" />
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180x180.png" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="/favicon-192x192.png" sizes="192x192" />
+    <meta name="application-name" content="LeetCode Online Judge" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+
+    <link href="/static/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/static/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/static/bootstrap-table/dist/bootstrap-table.min.css" rel="stylesheet" />
+    
+    <style type="text/css">.select2-container{box-sizing:border-box;display:inline-block;margin:0;position:relative;vertical-align:middle}.select2-container .select2-selection--single{box-sizing:border-box;cursor:pointer;display:block;height:28px;user-select:none;-webkit-user-select:none}.select2-container .select2-selection--single .select2-selection__rendered{display:block;padding-left:8px;padding-right:20px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.select2-container .select2-selection--single .select2-selection__clear{position:relative}.select2-container[dir="rtl"] .select2-selection--single .select2-selection__rendered{padding-right:8px;padding-left:20px}.select2-container .select2-selection--multiple{box-sizing:border-box;cursor:pointer;display:block;min-height:32px;user-select:none;-webkit-user-select:none}.select2-container .select2-selection--multiple .select2-selection__rendered{display:inline-block;overflow:hidden;padding-left:8px;text-overflow:ellipsis;white-space:nowrap}.select2-container .select2-search--inline{float:left}.select2-container .select2-search--inline .select2-search__field{box-sizing:border-box;border:0;font-size:100%;margin-top:5px;padding:0}.select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none}.select2-dropdown{background-color:white;border:1px solid #aaa;border-radius:4px;box-sizing:border-box;display:block;position:absolute;left:-100000px;width:100%;z-index:1051}.select2-results{display:block}.select2-results__options{list-style:none;margin:0;padding:0}.select2-results__option{padding:6px;user-select:none;-webkit-user-select:none}.select2-results__option[aria-selected]{cursor:pointer}.select2-container--open .select2-dropdown{left:0}.select2-container--open .select2-dropdown--above{border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--open .select2-dropdown--below{border-top:0;border-top-left-radius:0;border-top-right-radius:0}.select2-search--dropdown{display:block;padding:4px}.select2-search--dropdown .select2-search__field{padding:4px;width:100%;box-sizing:border-box}.select2-search--dropdown .select2-search__field::-webkit-search-cancel-button{-webkit-appearance:none}.select2-search--dropdown.select2-search--hide{display:none}.select2-close-mask{border:0;margin:0;padding:0;display:block;position:fixed;left:0;top:0;min-height:100%;min-width:100%;height:auto;width:auto;opacity:0;z-index:99;background-color:#fff;filter:alpha(opacity=0)}.select2-hidden-accessible{border:0 !important;clip:rect(0 0 0 0) !important;height:1px !important;margin:-1px !important;overflow:hidden !important;padding:0 !important;position:absolute !important;width:1px !important}.select2-container--default .select2-selection--single{background-color:#fff;border:1px solid #aaa;border-radius:4px}.select2-container--default .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px}.select2-container--default .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold}.select2-container--default .select2-selection--single .select2-selection__placeholder{color:#999}.select2-container--default .select2-selection--single .select2-selection__arrow{height:26px;position:absolute;top:1px;right:1px;width:20px}.select2-container--default .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0}.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear{float:left}.select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__arrow{left:1px;right:auto}.select2-container--default.select2-container--disabled .select2-selection--single{background-color:#eee;cursor:default}.select2-container--default.select2-container--disabled .select2-selection--single .select2-selection__clear{display:none}.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px}.select2-container--default .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text}.select2-container--default .select2-selection--multiple .select2-selection__rendered{box-sizing:border-box;list-style:none;margin:0;padding:0 5px;width:100%}.select2-container--default .select2-selection--multiple .select2-selection__rendered li{list-style:none}.select2-container--default .select2-selection--multiple .select2-selection__placeholder{color:#999;margin-top:5px;float:left}.select2-container--default .select2-selection--multiple .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-top:5px;margin-right:10px}.select2-container--default .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}.select2-container--default .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px}.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice,.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder,.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-search--inline{float:right}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto}.select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto}.select2-container--default.select2-container--focus .select2-selection--multiple{border:solid black 1px;outline:0}.select2-container--default.select2-container--disabled .select2-selection--multiple{background-color:#eee;cursor:default}.select2-container--default.select2-container--disabled .select2-selection__choice__remove{display:none}.select2-container--default.select2-container--open.select2-container--above .select2-selection--single,.select2-container--default.select2-container--open.select2-container--above .select2-selection--multiple{border-top-left-radius:0;border-top-right-radius:0}.select2-container--default.select2-container--open.select2-container--below .select2-selection--single,.select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--default .select2-search--dropdown .select2-search__field{border:1px solid #aaa}.select2-container--default .select2-search--inline .select2-search__field{background:transparent;border:0;outline:0;box-shadow:none;-webkit-appearance:textfield}.select2-container--default .select2-results&gt;.select2-results__options{max-height:200px;overflow-y:auto}.select2-container--default .select2-results__option[role=group]{padding:0}.select2-container--default .select2-results__option[aria-disabled=true]{color:#999}.select2-container--default .select2-results__option[aria-selected=true]{background-color:#ddd}.select2-container--default .select2-results__option .select2-results__option{padding-left:1em}.select2-container--default .select2-results__option .select2-results__option .select2-results__group{padding-left:0}.select2-container--default .select2-results__option .select2-results__option .select2-results__option{margin-left:-1em;padding-left:2em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-2em;padding-left:3em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-3em;padding-left:4em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-4em;padding-left:5em}.select2-container--default .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-5em;padding-left:6em}.select2-container--default .select2-results__option--highlighted[aria-selected]{background-color:#5897fb;color:white}.select2-container--default .select2-results__group{cursor:default;display:block;padding:6px}.select2-container--classic .select2-selection--single{background-color:#f7f7f7;border:1px solid #aaa;border-radius:4px;outline:0;background-image:-webkit-linear-gradient(top,white 50%,#eee 100%);background-image:-o-linear-gradient(top,white 50%,#eee 100%);background-image:linear-gradient(to bottom,white 50%,#eee 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF',endColorstr='#FFEEEEEE',GradientType=0)}.select2-container--classic .select2-selection--single:focus{border:1px solid #5897fb}.select2-container--classic .select2-selection--single .select2-selection__rendered{color:#444;line-height:28px}.select2-container--classic .select2-selection--single .select2-selection__clear{cursor:pointer;float:right;font-weight:bold;margin-right:10px}.select2-container--classic .select2-selection--single .select2-selection__placeholder{color:#999}.select2-container--classic .select2-selection--single .select2-selection__arrow{background-color:#ddd;border:0;border-left:1px solid #aaa;border-top-right-radius:4px;border-bottom-right-radius:4px;height:26px;position:absolute;top:1px;right:1px;width:20px;background-image:-webkit-linear-gradient(top,#eee 50%,#ccc 100%);background-image:-o-linear-gradient(top,#eee 50%,#ccc 100%);background-image:linear-gradient(to bottom,#eee 50%,#ccc 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE',endColorstr='#FFCCCCCC',GradientType=0)}.select2-container--classic .select2-selection--single .select2-selection__arrow b{border-color:#888 transparent transparent transparent;border-style:solid;border-width:5px 4px 0 4px;height:0;left:50%;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0}.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear{float:left}.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow{border:0;border-right:1px solid #aaa;border-radius:0;border-top-left-radius:4px;border-bottom-left-radius:4px;left:1px;right:auto}.select2-container--classic.select2-container--open .select2-selection--single{border:1px solid #5897fb}.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow{background:transparent;border:0}.select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #888 transparent;border-width:0 4px 5px 4px}.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single{border-top:0;border-top-left-radius:0;border-top-right-radius:0;background-image:-webkit-linear-gradient(top,white 0,#eee 50%);background-image:-o-linear-gradient(top,white 0,#eee 50%);background-image:linear-gradient(to bottom,white 0,#eee 50%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF',endColorstr='#FFEEEEEE',GradientType=0)}.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single{border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0;background-image:-webkit-linear-gradient(top,#eee 50%,white 100%);background-image:-o-linear-gradient(top,#eee 50%,white 100%);background-image:linear-gradient(to bottom,#eee 50%,white 100%);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE',endColorstr='#FFFFFFFF',GradientType=0)}.select2-container--classic .select2-selection--multiple{background-color:white;border:1px solid #aaa;border-radius:4px;cursor:text;outline:0}.select2-container--classic .select2-selection--multiple:focus{border:1px solid #5897fb}.select2-container--classic .select2-selection--multiple .select2-selection__rendered{list-style:none;margin:0;padding:0 5px}.select2-container--classic .select2-selection--multiple .select2-selection__clear{display:none}.select2-container--classic .select2-selection--multiple .select2-selection__choice{background-color:#e4e4e4;border:1px solid #aaa;border-radius:4px;cursor:default;float:left;margin-right:5px;margin-top:5px;padding:0 5px}.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove{color:#888;cursor:pointer;display:inline-block;font-weight:bold;margin-right:2px}.select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover{color:#555}.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice{float:right}.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice{margin-left:5px;margin-right:auto}.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto}.select2-container--classic.select2-container--open .select2-selection--multiple{border:1px solid #5897fb}.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple{border-top:0;border-top-left-radius:0;border-top-right-radius:0}.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple{border-bottom:0;border-bottom-left-radius:0;border-bottom-right-radius:0}.select2-container--classic .select2-search--dropdown .select2-search__field{border:1px solid #aaa;outline:0}.select2-container--classic .select2-search--inline .select2-search__field{outline:0;box-shadow:none}.select2-container--classic .select2-dropdown{background-color:white;border:1px solid transparent}.select2-container--classic .select2-dropdown--above{border-bottom:0}.select2-container--classic .select2-dropdown--below{border-top:0}.select2-container--classic .select2-results&gt;.select2-results__options{max-height:200px;overflow-y:auto}.select2-container--classic .select2-results__option[role=group]{padding:0}.select2-container--classic .select2-results__option[aria-disabled=true]{color:grey}.select2-container--classic .select2-results__option--highlighted[aria-selected]{background-color:#3875d7;color:white}.select2-container--classic .select2-results__group{cursor:default;display:block;padding:6px}.select2-container--classic.select2-container--open .select2-dropdown{border-color:#5897fb}/*! Select2 Bootstrap Theme v0.1.0-beta.8 | MIT License | github.com/select2/select2-bootstrap-theme */.select2-container--bootstrap{display:block}.select2-container--bootstrap .select2-selection{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px;outline:0}.select2-container--bootstrap .select2-selection.form-control{border-radius:4px}.select2-container--bootstrap .select2-search--dropdown .select2-search__field{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);background-color:#fff;border:1px solid #ccc;border-radius:4px;color:#555;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:14px}.select2-container--bootstrap .select2-search__field{outline:0}.select2-container--bootstrap .select2-search__field::-webkit-input-placeholder{color:#999}.select2-container--bootstrap .select2-search__field:-moz-placeholder{color:#999}.select2-container--bootstrap .select2-search__field::-moz-placeholder{color:#999;opacity:1}.select2-container--bootstrap .select2-search__field:-ms-input-placeholder{color:#999}.select2-container--bootstrap .select2-results__option[role=group]{padding:0}.select2-container--bootstrap .select2-results__option[aria-disabled=true]{color:#777;cursor:not-allowed}.select2-container--bootstrap .select2-results__option[aria-selected=true]{background-color:#f5f5f5;color:#262626}.select2-container--bootstrap .select2-results__option--highlighted[aria-selected]{background-color:#337ab7;color:#fff}.select2-container--bootstrap .select2-results__option .select2-results__option{padding:6px 12px}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__group{padding-left:0}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option{margin-left:-12px;padding-left:24px}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-24px;padding-left:36px}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-36px;padding-left:48px}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-48px;padding-left:60px}.select2-container--bootstrap .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option .select2-results__option{margin-left:-60px;padding-left:72px}.select2-container--bootstrap .select2-results__group{color:#777;display:block;padding:6px 12px;font-size:12px;line-height:1.428571429;white-space:nowrap}.select2-container--bootstrap.select2-container--focus .select2-selection,.select2-container--bootstrap.select2-container--open .select2-selection{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);-webkit-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;border-color:#66afe9}.select2-container--bootstrap.select2-container--open .select2-selection .select2-selection__arrow b{border-color:transparent transparent #999 transparent;border-width:0 4px 4px 4px}.select2-container--bootstrap.select2-container--open.select2-container--below .select2-selection{border-bottom-right-radius:0;border-bottom-left-radius:0;border-bottom-color:transparent}.select2-container--bootstrap.select2-container--open.select2-container--above .select2-selection{border-top-right-radius:0;border-top-left-radius:0;border-top-color:transparent}.select2-container--bootstrap .select2-selection__clear{color:#999;cursor:pointer;float:right;font-weight:bold;margin-right:10px}.select2-container--bootstrap .select2-selection__clear:hover{color:#333}.select2-container--bootstrap.select2-container--disabled .select2-selection{border-color:#ccc;-webkit-box-shadow:none;box-shadow:none}.select2-container--bootstrap.select2-container--disabled .select2-selection,.select2-container--bootstrap.select2-container--disabled .select2-search__field{cursor:not-allowed}.select2-container--bootstrap.select2-container--disabled .select2-selection,.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice{background-color:#eee}.select2-container--bootstrap.select2-container--disabled .select2-selection__clear,.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice__remove{display:none}.select2-container--bootstrap .select2-dropdown{-webkit-box-shadow:0 6px 12px rgba(0,0,0,0.175);box-shadow:0 6px 12px rgba(0,0,0,0.175);border-color:#66afe9;overflow-x:hidden;margin-top:-1px}.select2-container--bootstrap .select2-dropdown--above{margin-top:1px}.select2-container--bootstrap .select2-results&gt;.select2-results__options{max-height:200px;overflow-y:auto}.select2-container--bootstrap .select2-selection--single{height:34px;line-height:1.428571429;padding:6px 24px 6px 12px}.select2-container--bootstrap .select2-selection--single .select2-selection__arrow{position:absolute;bottom:0;right:12px;top:0;width:4px}.select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{border-color:#999 transparent transparent transparent;border-style:solid;border-width:4px 4px 0 4px;height:0;left:0;margin-left:-4px;margin-top:-2px;position:absolute;top:50%;width:0}.select2-container--bootstrap .select2-selection--single .select2-selection__rendered{color:#555;padding:0}.select2-container--bootstrap .select2-selection--single .select2-selection__placeholder{color:#999}.select2-container--bootstrap .select2-selection--multiple{min-height:34px;padding:0;height:auto}.select2-container--bootstrap .select2-selection--multiple .select2-selection__rendered{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:block;line-height:1.428571429;list-style:none;margin:0;overflow:hidden;padding:0;width:100%;text-overflow:ellipsis;white-space:nowrap}.select2-container--bootstrap .select2-selection--multiple .select2-selection__placeholder{color:#999;float:left;margin-top:5px}.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{color:#555;background:#fff;border:1px solid #ccc;border-radius:4px;cursor:default;float:left;margin:5px 0 0 6px;padding:0 6px}.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{background:transparent;padding:0 12px;height:32px;line-height:1.428571429;margin-top:0;min-width:5em}.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove{color:#999;cursor:pointer;display:inline-block;font-weight:bold;margin-right:3px}.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice__remove:hover{color:#333}.select2-container--bootstrap .select2-selection--multiple .select2-selection__clear{margin-top:6px}.select2-container--bootstrap .select2-selection--single.input-sm,.input-group-sm .select2-container--bootstrap .select2-selection--single,.form-group-sm .select2-container--bootstrap .select2-selection--single{border-radius:3px;font-size:12px;height:30px;line-height:1.5;padding:5px 22px 5px 10px}.select2-container--bootstrap .select2-selection--single.input-sm .select2-selection__arrow b,.input-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.form-group-sm .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{margin-left:-5px}.select2-container--bootstrap .select2-selection--multiple.input-sm,.input-group-sm .select2-container--bootstrap .select2-selection--multiple,.form-group-sm .select2-container--bootstrap .select2-selection--multiple{min-height:30px;border-radius:3px}.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__choice,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{font-size:12px;line-height:1.5;margin:4px 0 0 5px;padding:0 5px}.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-search--inline .select2-search__field,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{padding:0 10px;font-size:12px;height:28px;line-height:1.5}.select2-container--bootstrap .select2-selection--multiple.input-sm .select2-selection__clear,.input-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.form-group-sm .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear{margin-top:5px}.select2-container--bootstrap .select2-selection--single.input-lg,.input-group-lg .select2-container--bootstrap .select2-selection--single,.form-group-lg .select2-container--bootstrap .select2-selection--single{border-radius:6px;font-size:18px;height:46px;line-height:1.3333333;padding:10px 31px 10px 16px}.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow,.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow{width:5px}.select2-container--bootstrap .select2-selection--single.input-lg .select2-selection__arrow b,.input-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b,.form-group-lg .select2-container--bootstrap .select2-selection--single .select2-selection__arrow b{border-width:5px 5px 0 5px;margin-left:-5px;margin-left:-10px;margin-top:-2.5px}.select2-container--bootstrap .select2-selection--multiple.input-lg,.input-group-lg .select2-container--bootstrap .select2-selection--multiple,.form-group-lg .select2-container--bootstrap .select2-selection--multiple{min-height:46px;border-radius:6px}.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__choice,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice,.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__choice{font-size:18px;line-height:1.3333333;border-radius:4px;margin:9px 0 0 8px;padding:0 10px}.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-search--inline .select2-search__field,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field,.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field{padding:0 16px;font-size:18px;height:44px;line-height:1.3333333}.select2-container--bootstrap .select2-selection--multiple.input-lg .select2-selection__clear,.input-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear,.form-group-lg .select2-container--bootstrap .select2-selection--multiple .select2-selection__clear{margin-top:10px}.select2-container--bootstrap .select2-selection.input-lg.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #999 transparent;border-width:0 5px 5px 5px}.input-group-lg .select2-container--bootstrap .select2-selection.select2-container--open .select2-selection--single .select2-selection__arrow b{border-color:transparent transparent #999 transparent;border-width:0 5px 5px 5px}.select2-container--bootstrap[dir="rtl"] .select2-selection--single{padding-left:24px;padding-right:12px}.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__rendered{padding-right:0;padding-left:0;text-align:right}.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__clear{float:left}.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__arrow{left:12px;right:auto}.select2-container--bootstrap[dir="rtl"] .select2-selection--single .select2-selection__arrow b{margin-left:0}.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice,.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__placeholder{float:right}.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice{margin-left:0;margin-right:6px}.select2-container--bootstrap[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove{margin-left:2px;margin-right:auto}.has-warning .select2-dropdown,.has-warning .select2-selection{border-color:#8a6d3b}.has-warning .select2-container--focus .select2-selection,.has-warning .select2-container--open .select2-selection{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #c0a16b;box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #c0a16b;border-color:#66512c}.has-warning.select2-drop-active{border-color:#66512c}.has-warning.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#66512c}.has-error .select2-dropdown,.has-error .select2-selection{border-color:#a94442}.has-error .select2-container--focus .select2-selection,.has-error .select2-container--open .select2-selection{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #ce8483;border-color:#843534}.has-error.select2-drop-active{border-color:#843534}.has-error.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#843534}.has-success .select2-dropdown,.has-success .select2-selection{border-color:#3c763d}.has-success .select2-container--focus .select2-selection,.has-success .select2-container--open .select2-selection{-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #67b168;box-shadow:inset 0 1px 1px rgba(0,0,0,0.075),0 0 6px #67b168;border-color:#2b542c}.has-success.select2-drop-active{border-color:#2b542c}.has-success.select2-drop-active.select2-drop.select2-drop-above{border-top-color:#2b542c}.input-group .select2-container--bootstrap{display:table;table-layout:fixed;position:relative;z-index:2;float:left;width:100%;margin-bottom:0}.input-group .select2-container--bootstrap.select2-container--open,.input-group .select2-container--bootstrap.select2-container--focus{z-index:3}.input-group.select2-bootstrap-prepend .select2-container--bootstrap .select2-selection{border-bottom-left-radius:0;border-top-left-radius:0}.input-group.select2-bootstrap-append .select2-container--bootstrap .select2-selection{border-bottom-right-radius:0;border-top-right-radius:0}.select2-bootstrap-append .select2-container--bootstrap,.select2-bootstrap-append .input-group-btn,.select2-bootstrap-append .input-group-btn .btn,.select2-bootstrap-prepend .select2-container--bootstrap,.select2-bootstrap-prepend .input-group-btn,.select2-bootstrap-prepend .input-group-btn .btn{vertical-align:top}.form-control.select2-hidden-accessible{position:absolute !important;width:1px !important}.form-inline .select2-container--bootstrap{display:inline-block}.last-col{overflow:hidden}.ptn,.pvn,.pan{padding-top:0 !important}.ptx,.pvx,.pax{padding-top:3px !important}.pts,.pvs,.pas{padding-top:5px !important}.ptm,.pvm,.pam{padding-top:10px !important}.ptl,.pvl,.pal{padding-top:20px !important}.pth,.pvh,.pah{padding-top:40px !important}.prn,.phn,.pan{padding-right:0 !important}.prx,.phx,.pax{padding-right:3px !important}.prs,.phs,.pas{padding-right:5px !important}.prm,.phm,.pam{padding-right:10px !important}.prl,.phl,.pal{padding-right:20px !important}.prh,.phh,.pah{padding-right:40px !important}.pbn,.pvn,.pan{padding-bottom:0 !important}.pbx,.pvx,.pax{padding-bottom:3px !important}.pbs,.pvs,.pas{padding-bottom:5px !important}.pbm,.pvm,.pam{padding-bottom:10px !important}.pbl,.pvl,.pal{padding-bottom:20px !important}.pbh,.pvh,.pah{padding-bottom:40px !important}.pln,.phn,.pan{padding-left:0 !important}.plx,.phx,.pax{padding-left:3px !important}.pls,.phs,.pas{padding-left:5px !important}.plm,.phm,.pam{padding-left:10px !important}.pll,.phl,.pal{padding-left:20px !important}.plh,.phh,.pah{padding-left:40px !important}.mtn,.mvn,.man{margin-top:0 !important}.mtx,.mvx,.max{margin-top:3px !important}.mts,.mvs,.mas{margin-top:5px !important}.mtm,.mvm,.mam{margin-top:10px !important}.mtl,.mvl,.mal{margin-top:20px !important}.mth,.mvh,.mah{margin-top:40px !important}.mrn,.mhn,.man{margin-right:0 !important}.mrx,.mhx,.max{margin-right:3px !important}.mrs,.mhs,.mas{margin-right:5px !important}.mrm,.mhm,.mam{margin-right:10px !important}.mrl,.mhl,.mal{margin-right:20px !important}.mrh,.mhh,.mah{margin-right:40px !important}.mbn,.mvn,.man{margin-bottom:0 !important}.mbx,.mvx,.max{margin-bottom:3px !important}.mbs,.mvs,.mas{margin-bottom:5px !important}.mbm,.mvm,.mam{margin-bottom:10px !important}.mbl,.mvl,.mal{margin-bottom:20px !important}.mbh,.mvh,.mah{margin-bottom:40px !important}.mln,.mhn,.man{margin-left:0 !important}.mlx,.mhx,.max{margin-left:3px !important}.mls,.mhs,.mas{margin-left:5px !important}.mlm,.mhm,.mam{margin-left:10px !important}.mll,.mhl,.mal{margin-left:20px !important}.mlh,.mhh,.mah{margin-left:40px !important}.select{position:relative;display:inline-block;vertical-align:top;min-width:220px;width:auto}.form-group .select{width:100%}.form-group .select&gt;.select2-choice{width:100%}.select.form-control{border:0;padding:0;height:auto}.select2-container{display:inline-block}.select2-results__option{padding:12px 16px}.callout{padding:20px;margin:20px 0;border:1px solid #eee;border-left-width:5px;border-radius:3px}.callout+.callout{margin-top:-5px}.callout h4{margin-top:0;margin-bottom:8px}.callout p:last-child{margin-bottom:0}.callout code{border-radius:3px}.callout-default{border-left-color:#777}.callout-default h4{color:#777}.callout-primary{border-left-color:#428bca}.callout-primary h4{color:#428bca}.callout-success{border-left-color:#5cb85c}.callout-success h4{color:#5cb85c}.callout-danger{border-left-color:#d9534f}.callout-danger h4{color:#d9534f}.callout-warning{border-left-color:#f0ad4e}.callout-warning h4{color:#f0ad4e}.callout-info{border-left-color:#5bc0de}.callout-info h4{color:#5bc0de}.question-section{font-size:16px;margin:40px 0}.question-section img{box-sizing:border-box;margin:10px 0 20px;width:100%;box-shadow:4px 4px 10px #888}.question-section blockquote{font-size:20px;font-style:italic}.question-section p{margin-left:25px}.lower-alpha{margin:20px 0;list-style-type:lower-roman}.lower-alpha pre{margin:10px 0}.status-accepted{color:#3c763d}.favor{color:#f0ad4e}.not-favor{color:grey}.add-favor{cursor:pointer;position:relative;top:-3px}body{overflow-y:scroll}a{color:#08c}a:hover{color:#005580}.form-signin{max-width:300px;padding:19px 29px 29px;margin:0 auto 20px;background-color:#fff;border:1px solid #e5e5e5;border-radius:5px;box-shadow:0 1px 2px rgba(0,0,0,0.05)}.block-center{display:block;margin-left:auto;margin-right:auto}.message{border:1px solid #e6db55;background-color:#ffffe0;padding:15px 30px 15px 15px;margin:20px 0}.navbar-extra{border-radius:0;margin-bottom:30px}#chat-link{position:fixed;right:5px;bottom:10px;background:#fff;border:1px solid #e0e0e0;padding:5px 15px 10px;border-radius:5px 0 0 5px;box-shadow:0 1px 3px rgba(0,0,0,0.1);color:#979faf}.glyphicon-envelope{text-align:center;line-height:26px;margin-right:5px;position:relative}[ng-cloak]{display:none}.editor{font-size:14px !important;border:1px solid #e0e0e0;height:475px}.ac{display:inline-block;height:16px;width:16px;background-image:url('/static/images/correct.png?f5fbc0404143');background-repeat:no-repeat}.notac{display:inline-block;height:16px;width:16px;background-image:url('/static/images/question.png?f5fbc0404143');background-repeat:no-repeat}@media(min-width:768px){ul.nav li.dropdown:hover&gt;ul.dropdown-menu{display:block;margin-top:0;border-top-left-radius:0;border-top-right-radius:0}}#subscribe{background-color:#373737}@media(min-width:768px){.container{position:relative}#navbar-right{position:absolute;display:inline-block;right:0}}html,body{height:100%}.content-wrapper{box-sizing:border-box;min-height:100%}.top-buffer{margin-top:20px}.ng-fade{opacity:1}.ng-fade.ng-hide{opacity:0}.ng-fade.ng-hide-remove{-webkit-animation:fadeInLeft 1s;animation:fadeInLeft 1s}.invisible{visibility:hidden}.visible{visibility:visible}.notransition{-webkit-transition:none !important;transition:none !important}a.menu-links{cursor:pointer}p.comment{color:darkgray}p.comment a{color:lightskyblue}.btn.disabled{pointer-events:auto}.form-control-inline{min-width:0;width:auto;display:inline}</style>
+    
+     
+<link rel="stylesheet" href="/static/CACHE/css/73a26c621165.css" type="text/css" />
+
+    <script src="/static/jquery/dist/jquery.min.js"></script>
+    <script src="/static/angular/angular.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="/static/html5shiv/dist/html5shiv.min.js"></script>
+      <script src="/static/respond/dest/respond.min.js"></script>
+    <![endif]-->
+  <style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled &gt; .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style type="text/css">.data-structure-viewer{width:100%;width:calc(100% - 30px)}.data-structure-viewer svg{width:100%}.data-structure-viewer .title-label{position:absolute;top:4%;left:4%;font-size:1.2em}.data-structure-viewer .error-message{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);max-width:60%;opacity:0}.data-structure-viewer .tip{position:absolute;bottom:5%;right:4%;max-width:60%;opacity:0}</style><style type="text/css">.data-structure-viewer .node circle{fill:#fff;stroke:#4682b4;stroke-width:3px}.data-structure-viewer .node text{font:1.8em sans-serif}.data-structure-viewer .link{fill:none;stroke:#ccc;stroke-width:2px}</style><script src="/static/ace/src-noconflict/mode-c_cpp.js"></script><style type="text/css">.at-icon{fill:#fff;border:0}.at-icon-wrapper{display:inline-block;overflow:hidden}a .at-icon-wrapper{cursor:pointer}.at-rounded,.at-rounded-element .at-icon-wrapper{border-radius:12%}.at-circular,.at-circular-element .at-icon-wrapper{border-radius:50%}.addthis_32x32_style .at-icon{width:2pc;height:2pc}.addthis_24x24_style .at-icon{width:24px;height:24px}.addthis_20x20_style .at-icon{width:20px;height:20px}.addthis_16x16_style .at-icon{width:1pc;height:1pc}#at16lb{display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:1001;background-color:#000;opacity:.001}#at16pc,#at16pi,#at16pib,#at_complete,#at_email,#at_error,#at_share,#at_success{position:static!important}.at15dn{display:none}.at15a{border:0;height:0;margin:0;padding:0;width:230px}.atnt{text-align:center!important;padding:6px 0 0!important;height:24px!important}.atnt a{text-decoration:none;color:#36b}.atnt a:hover{text-decoration:underline}#at15s,#at16nms,#at16p,#at16p form input,#at16p label,#at16p textarea,#at16recap,#at16sas,#at_msg,#at_share .at_item{font-family:arial,helvetica,tahoma,verdana,sans-serif!important;font-size:9pt!important;outline-style:none;outline-width:0;line-height:1em}* html #at15s.mmborder{position:absolute!important}#at15s.mmborder{position:fixed!important;width:250px!important}#at15s{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);float:none;line-height:1em;margin:0;overflow:visible;padding:5px;text-align:left;position:absolute}#at15s a,#at15s span{outline:0;direction:ltr;text-transform:none}#at15s .at-label{margin-left:5px}#at15s .at-icon-wrapper,#at16ps .at-icon-wrapper{width:1pc;height:1pc;vertical-align:middle}#at15s .at-icon,#at16ps .at-icon{width:1pc;height:1pc}.at4-icon{display:inline-block;background-repeat:no-repeat;background-position:top left;margin:0;overflow:hidden;cursor:pointer}.addthis_16x16_style .at4-icon,.addthis_16x16_white_style .at4-icon,.addthis_default_style .at4-icon,.at4-icon,.at-16x16{width:1pc;height:1pc;line-height:1pc;background-size:1pc!important}.addthis_32x32_style .at4-icon,.addthis_32x32_white_style .at4-icon,.at-32x32{width:2pc;height:2pc;line-height:2pc;background-size:2pc!important}.addthis_24x24_style .at4-icon,.addthis_24x24_white_style .at4-icon,.at-24x24{width:24px;height:24px;line-height:24px;background-size:24px!important}.addthis_20x20_style .at4-icon,.addthis_20x20_white_style .at4-icon,.at-20x20{width:20px;height:20px;line-height:20px;background-size:20px!important}.at4-icon.circular,.circular .at4-icon,.circular.aticon{border-radius:50%}.at4-icon.rounded,.rounded .at4-icon{border-radius:4px}.at4-icon-left{float:left}#at15s .at4-icon{text-indent:20px;padding:0;overflow:visible;white-space:nowrap;background-size:1pc;width:1pc;height:1pc;background-position:top left;display:inline-block;line-height:1pc}.addthis_vertical_style .at4-icon,.at4-follow-container .at4-icon,.sortable-list-container .at4-icon{margin-right:5px}html&gt;body #at15s{width:250px!important}#at15s.atm{background:none!important;padding:0!important;width:10pc!important}#at15s.atiemode2{width:252px!important}#at15s_inner{background:#fff;border:1px solid #fff;margin:0}#at15s_head{position:relative;background:#f2f2f2;padding:4px;cursor:default;border-bottom:1px solid #e5e5e5}.at15s_head_success{background:#cafd99!important;border-bottom:1px solid #a9d582!important}.at15s_head_success a,.at15s_head_success span{color:#000!important;text-decoration:none}#at15s_brand,#at15sptx,#at16_brand{position:absolute}#at15s_brand{top:4px;right:4px}.at15s_brandx{right:20px!important}a#at15sptx{top:4px;right:4px;text-decoration:none;color:#4c4c4c;font-weight:700}#at15s.atiemode2 a#at15sptx{right:8px}#at15sptx:hover{text-decoration:underline}#at16_brand{top:5px;right:30px;cursor:default}#at_hover{padding:4px}#at_hover .at_item,#at_share .at_item{background:#fff!important;float:left!important;color:#4c4c4c!important}#at_share .at_item .at-icon-wrapper{margin-right:5px}#at_hover .at_bold{font-weight:700;color:#000!important}#at16nms,#at16sas{padding:4px 5px}#at16nms{display:none}#at16sas{clear:left;padding-top:1pc;padding-bottom:1pc}#at_hover .at_item{width:7pc!important;padding:2px 3px!important;margin:1px;text-decoration:none!important}#at_hover .at_item.atiemode2{width:114px!important}#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover{margin:0!important}#at16ps .at_item:focus,#at_hover .at_item.athov,#at_hover .at_item:focus,#at_hover .at_item:hover,#at_share .at_item.athov,#at_share .at_item:hover{background:#f2f2f2!important;border:1px solid #e5e5e5;color:#000!important;text-decoration:none}.ipad #at_hover .at_item:focus{background:#fff!important;border:1px solid #fff}#at_email15{padding-top:5px}.at15e_row{height:28px}.at15e_row label,.at15e_row span{padding-left:10px!important;display:block!important;width:60px!important;float:left!important}.at15e_row input,.at15e_row textarea{display:block!important;width:150px!important;float:left!important;background:#fff!important;border:1px solid #ccc!important;color:#333!important;font-size:11px!important;font-weight:400!important;padding:0!important}#at_email input,#at_email label,#at_email textarea{font-size:11px!important}#at_email #at16meo{margin:15px 0 0 2px}#at16meo span{float:left;margin-right:5px;padding-top:4px}#at16meo a{float:left;margin:0}#at_sending{top:130px;left:110px;position:absolute;text-align:center}#at_sending img{padding:10px}.at15t{display:block!important;height:1pc!important;line-height:1pc!important;padding-left:20px!important;background-position:0 0;text-align:left}.addthis_button,.at15t{cursor:pointer}.addthis_toolbox a.at300b,.addthis_toolbox a.at300m{width:auto}.addthis_toolbox a{margin-bottom:5px;line-height:initial}.addthis_toolbox.addthis_vertical_style{width:200px}.addthis_toolbox.addthis_close_style .addthis_button_google_plusone{width:65px;overflow:hidden}.addthis_toolbox.addthis_close_style .addthis_button_facebook_like{width:85px;overflow:hidden}.addthis_toolbox.addthis_close_style .addthis_button_tweet{width:62px;overflow:hidden}.addthis_button_facebook_like .fb_iframe_widget{line-height:100%}.addthis_button_facebook_like iframe.fb_iframe_widget_lift{max-width:none}.addthis_toolbox a.addthis_button_counter,.addthis_toolbox a.addthis_button_facebook_like,.addthis_toolbox a.addthis_button_facebook_send,.addthis_toolbox a.addthis_button_facebook_share,.addthis_toolbox a.addthis_button_foursquare,.addthis_toolbox a.addthis_button_google_plusone,.addthis_toolbox a.addthis_button_linkedin_counter,.addthis_toolbox a.addthis_button_pinterest_pinit,.addthis_toolbox a.addthis_button_stumbleupon_badge,.addthis_toolbox a.addthis_button_tweet{display:inline-block}.at-share-tbx-element .google_plusone_iframe_widget&gt;span&gt;div{vertical-align:top!important}.addthis_toolbox span.addthis_follow_label{display:none}.addthis_toolbox.addthis_vertical_style span.addthis_follow_label{display:block;white-space:nowrap}.addthis_toolbox.addthis_vertical_style a{display:block}.addthis_toolbox.addthis_vertical_style.addthis_32x32_style a{line-height:2pc;height:2pc}.addthis_toolbox.addthis_vertical_style .at300bs{margin-right:4px;float:left}.addthis_toolbox.addthis_20x20_style span{line-height:20px;*height:20px}.addthis_toolbox.addthis_32x32_style span{line-height:2pc;*height:2pc}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact,.addthis_toolbox.addthis_pill_combo_style a{float:left}.addthis_toolbox.addthis_pill_combo_style a.addthis_button_tweet{margin-top:-2px}.addthis_toolbox.addthis_pill_combo_style .addthis_button_compact .at15t_compact{margin-right:4px}.addthis_default_style .addthis_separator{margin:0 5px;display:inline}div.atclear{clear:both}.addthis_default_style .addthis_separator,.addthis_default_style .at4-icon,.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300bs,.addthis_default_style .at300m{float:left}.at300b img,.at300bo img{border:0}a.at300b .at4-icon,a.at300m .at4-icon{display:block}.addthis_default_style .at300b,.addthis_default_style .at300bo,.addthis_default_style .at300m{padding:0 2px}.at300b,.at300bo,.at300bs,.at300m{cursor:pointer}.addthis_button_facebook_like.at300b:hover,.addthis_button_facebook_like.at300bs:hover,.addthis_button_facebook_send.at300b:hover,.addthis_button_facebook_send.at300bs:hover{opacity:1;-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";filter:alpha(opacity=100)}.addthis_20x20_style .at15t,.addthis_20x20_style .at300bs,.addthis_20x20_style .dummy .at300bs{overflow:hidden;display:block;height:20px!important;width:20px!important;line-height:20px!important}.addthis_32x32_style .at15t,.addthis_32x32_style .at300bs,.addthis_32x32_style .dummy .at300bs{overflow:hidden;display:block;height:2pc!important;width:2pc!important;line-height:2pc!important}.at300bs{background-position:0 0}.at16nc,.at300bs{overflow:hidden;display:block;height:1pc;width:1pc;line-height:1pc!important}.at16t{padding-left:20px!important;width:auto;cursor:pointer;text-align:left;overflow:visible!important}#at_feed{display:none;padding:10px;height:300px}#at_feed span{margin-bottom:10px;font-size:9pt}#at_feed div{width:102px!important;height:26px!important;line-height:26px!important;float:left!important;margin-right:68px}#at_feed div.at_litem{margin-right:0}#at_feed a{margin:10px 0;height:17px;line-height:17px}#at_feed.atused .fbtn{background:url(//s7.addthis.com/static/r05/feed00.gif) no-repeat;float:left;width:102px;cursor:pointer;text-indent:-9000px}#at_feed .fbtn.bloglines{background-position:0 0!important;width:94px;height:20px!important;line-height:20px!important;margin-top:8px!important}#at_feed .fbtn.yahoo{background-position:0 -20px!important}#at_feed .fbtn.newsgator,.fbtn.newsgator-on{background-position:0 -37px!important}#at_feed .fbtn.technorati{background-position:0 -71px!important}#at_feed .fbtn.netvibes{background-position:0 -88px!important}#at_feed .fbtn.pageflakes{background-position:0 -141px!important}#at_feed .fbtn.feedreader{background-position:0 -172px!important}#at_feed .fbtn.newsisfree{background-position:0 -207px!important}#at_feed .fbtn.google{background-position:0 -54px!important;width:78pt}#at_feed .fbtn.winlive{background-position:0 -105px!important;width:75pt;height:19px!important;line-height:19px;margin-top:9px!important}#at_feed .fbtn.mymsn{background-position:0 -158px;width:71px;height:14px!important;line-height:14px!important;margin-top:9pt!important}#at_feed .fbtn.aol{background-position:0 -189px;width:92px;height:18px!important;line-height:18px!important}.addthis_default_style .at15t_compact,.addthis_default_style .at15t_expanded{margin-right:4px}#at16clb{font-size:16pt;font-family:verdana bold,verdana,arial,sans-serif}#at_share .at_item{width:123px!important;padding:4px;margin-right:2px;border:1px solid #fff}#at16pm{background:#fff;width:298px;height:380px;text-align:left;border-right:1px solid #ccc;position:static}#at16pcc,#at16pccImg{position:fixed;top:0;left:0;width:100%;margin:0 auto;font-size:10px!important;color:#4c4c4c;padding:0;z-index:10000001;overflow:visible}#at16pccImg{height:100%}#at16abifc{overflow:hidden;margin:0;top:10px;left:10px;height:355px;width:492px;position:absolute;border:0}#at16abifc iframe{border:0;position:absolute;height:380px;width:516px;top:-10px;left:-10px}* html div#at16abifc.atiemode2{height:374px;width:482px}* html #at16abifc iframe{height:23pc;left:-10px;top:-10px;overflow:hidden}#at16p{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);z-index:10000001;position:absolute;top:50%;left:50%;width:300px;padding:10px;margin:0 auto;margin-top:-185px;margin-left:-155px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#5e5e5e}#at_share{margin:0;padding:0}#at16ps{overflow-y:scroll;height:19pc;padding:5px}a#at16pit{position:absolute;top:37px;right:10px;display:block;background:url(data:image/gif;base64,R0lGODlhEAAUAKIFAKqqquHh4cLCwszMzP///////wAAAAAAACH5BAEAAAUALAAAAAAQABQAAAMtOLqsAqWQSSsN0OoLthfeNoTaSFbmOaUqe7okHMoeLaqUXeITiGM/SGM4eEQSADs=) no-repeat;width:1pc;height:20px;line-height:19px;margin-right:-17px;text-align:center;overflow:hidden;color:#36b}#at16pi{background:#e5e5e5;text-align:left;border:1px solid #ccc;border-bottom:0}#at16pi a{text-decoration:none;color:#36b}#at16p #at16abc{margin-left:2px!important}#at16pi a:hover{text-decoration:underline}#at16pt{position:relative;background:#f2f2f2;height:13px;padding:5px 10px}#at16pt a,#at16pt h4{font-weight:700}#at16pt h4{display:inline;margin:0;padding:0;font-size:9pt;color:#4c4c4c;cursor:default}#at16pt a{position:absolute;top:5px;right:10px;color:#4c4c4c;text-decoration:none;padding:2px}#at15sptx:focus,#at16pt a:focus{outline:thin dotted}#at16pc form{margin:0}#at16pc form label{display:block;font-size:11px;font-weight:700;padding-bottom:4px;float:none;text-align:left}#at16pc form label span{font-weight:400;color:#4c4c4c;display:inline}#at_email form .abif{width:17pc!important}#at_email textarea{height:55px!important;word-wrap:break-word}* html #at_email textarea,:first-child+html #at_email textarea{height:42px!important}#at_email label{width:220px}#at_email input,#at_email textarea{background:#fff;border:1px solid #bbb;width:17pc!important;margin:0;margin-bottom:8px;font-weight:400;padding:3px!important;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:11px;line-height:1.4em;color:#333}#at_email form .atfxmode2{width:279px!important}#at16pc form .at_ent{color:#333!important}#at16pc textarea{height:3pc}#at16pc form input:focus,#at16pc textarea:focus{background:ivory;color:#333}#at16p .atbtn,#at16recap .atbtn{background:#fff;border:1px solid #b5b5b5;width:60px!important;padding:2px 4px;margin:0;margin-right:2px!important;font-size:11px!important;font-weight:700;color:#333;cursor:pointer}#at16p .atbtn:focus,#at16p .atbtn:hover,#at16recap .atbtn:focus,#at16recap .atbtn:hover{border-color:#444;color:#06c}#at16p .atrse,#at16recap .atrse{font-weight:400!important;color:#666;margin-left:2px!important}#atsb .atbtn{width:78px!important;margin:0!important}#at_email #ateml{text-align:right;font-size:10px;color:#999}#at16pc{height:343px!important;font-size:11px;text-align:left;color:#4c4c4c}#at_email{padding:5px 10px}#at16pc .tmsg{padding:4px 2px;text-align:right}#at16psf{position:relative;background:#f2f2f2 url(data:image/gif;base64,R0lGODlhGQEVAMQYAGZmZuDg4Ozs7MjIyMzMzPj4+LOzs3BwcMbGxsvLy5+fn/X19djY2IODg+bm5paWlnl5eeLi4oyMjKmpqdXV1dvb28/Pz////////wAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAABgALAAAAAAZARUAAAX/ICaOGJFYaKqubOu+cCzPdG3feK7vPJwQpOBoEChcjsikcslsOp/QqHRKrVqv2Kx2Gy0EBkKRgMEtm8/otHrNTjMEQYGjTa/b7/h82gEfVfSAgYKDhGcVQ0sLBhAAEAYLhZGSk5RqYBgBSgsNAA0GnA2QlaOkpaZHASVGSQYACEgIABOntLW2eAUmSxASShIHt8HCw1snSwAGSq3EzM3OSyhLBw9KD8DP2Nm30UoKrrAACtrj5KMWCYmcCgbeAAcR5fHygT+rSQvtAA8A7vDz/wDV5MIUJVa/gAgTZkmFYYAUg70USpz45BKGPwUPiKPIseOhEXI6ihzphE8cMiRTMI58E6ZhEZUwEXqx2LIEAwsUKujcybOnz59AgwodSrSo0aNIkypdyrSpU58ofoQJAQA7) no-repeat center center;border-bottom:1px solid #ccc;height:20px;padding:4px 10px;text-align:center}* html #at16psf input,:first-child+html #at16psf input{padding:0}#at16psf input,#at16psf input:focus{background:#fff;border:none;width:220px;margin:2px 0 0;color:#666;outline-style:none;outline-width:0;padding:2px 0 0;line-height:9pt;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt}#at16pcc .at_error,#at16recap .at_error{background:#f26d7d;border-bottom:1px solid #df5666;padding:5px 10px;color:#fff}#at16pcc #at_success{background:#d0fbda;border-bottom:1px solid #a8e7b7;padding:5px 10px;color:#4c4c4c}#at_complete{font-size:13pt;color:#47731d;text-align:center;padding-top:130px;height:13pc!important;width:472px}#at_s_msg{margin-bottom:10px}.atabout{left:55px}.ac-about{right:20px}.at_baa{display:block;overflow:hidden;outline:0}#at15s #at16pf a{top:1px}#at16pc form #at_send{width:5pc!important}#at16pp{color:#4c4c4c;position:absolute;top:9pt;right:9pt;font-size:11px}#at16pp label{font-size:11px!important}#at16ppc{padding:10px;width:179px}#at16pph{padding:5px 0 10px}#at16pph select{margin:5px 0 8px}#at16pp .atinp{width:156px}#at16ppb{background:#fff;border:1px solid #ccc;height:274px}#at16ep{height:1pc;padding:8px}#at16ep a{display:block;height:1pc;line-height:1pc;padding-left:22px;margin-bottom:8px;font-size:9pt}#at16ep a.at_gmail{background:url(data:image/gif;base64,R0lGODlhEAAQALMPAPKqo95TU+NkY/TCwP74+PbX1/zo59wtJ/nx7uZ7fvnRzfCTgvq2td9DQf///////yH5BAEAAA8ALAAAAAAQABAAAARi8MlJq700hMS6/4vWNIdQOERKOMgyvqSgOLRjJAe8CUcw0ApeYyF4DQpCwCDQGyCKo59BGDtNjbRBIvazQRtSxgCwGDAMrO/AcK7ZztcRoO1+B43oOs0Qb8w/gAxFGISFFREAOw==) no-repeat left}#at16ep a.at_hotmail{background:url(data:image/gif;base64,R0lGODlhEAAQAMQfAP7XFG7B4/zjl/JZIAm7TK7V7v3FY/aLRGDNhOqmkA2ql/2YJvfr2Pn7++9vWtXe6/jQvOfw9funZg2EzEWv3zil0heg0zDCbESHx9PpxY6TvJ3QpPJtQf7+/v///////yH5BAEAAB8ALAAAAAAQABAAAAWO4CeOpNhAUFeuzDEMiRepK/S+XDBVjzd6kAWHc3tMjpVZhyE8cByvDsViOQYehsPCSeR8IpQpFZMwGCQHl/dToAQoionGLEHDRJ5CoHJRkM92ED8FCgQEGHNoDgsCJB4XhgpzZwsAjSQZFxcIGgCengwlHRsIpQKfAg0rHQiGEacGqisfDZsdtzSzHz4rIQA7) no-repeat left}#at16ep a.at_yahoo{background:url(data:image/gif;base64,R0lGODlhEAAQAKIHAPylpevx8bsICNJfX/jQ0Kahof8AAP///yH5BAEAAAcALAAAAAAQABAAAANJeLrc/jAuAmolcQhjhBiBBRDDAChAVxzE5g3csKRGQQpFqDL0fsCCQCOFUwR8vI7wECgtjQDg6CfA8DxYmWbVCHi/TK9kTC4zEgA7) no-repeat left}#at16ppf p#atsb{padding-top:20px;font-size:10px}#at16abr{margin-top:10px}#at16abr input{padding:0;margin:0;margin-right:5px}#at16ppso{display:none;text-align:right;margin-top:2px}#at16ppa{background:#fff;border:1px solid #ccc;height:228px;width:178px;overflow:auto}#at16ppa a{display:block;white-space:nowrap;padding:4px 8px;font-size:9pt!important}#at16eatdr{position:absolute;background:#fff;border-top:0;max-height:110px;overflow:auto;z-index:500;top:129px;left:21px;width:277px}* html #at_email #at16eatdr,:first-child+html #at_email #at16eatdr{top:115px!important;width:17pc!important}#at16eatdr a{display:block;overflow:hidden;border-bottom:1px dotted #eee;padding:4px 8px}#at16eatdr a.hover,#at16eatdr a:hover{background:#e0eefa;text-decoration:none;color:#333}#at_pspromo{height:130px;padding-top:10px}#at15psp,#at_pspromo{width:205px;padding-left:5px}#at_testpromo{font-size:9pt;width:220px;display:none}.atm-i #at_pspromo{height:150px}.atm-i #at_pspromo,.atm-i #at_testpromo{width:140px}#at_testpromo input{width:200px}#at_promo .at-promo-content,#at_testpromo .at-promo-content{margin-top:9pt}#at_promo .at-promo-btn,#at_testpromo .at-promo-btn{padding-top:10px}#at_promo h4,#at_testpromo h4{font-family:arial,helvetica,tahoma,verdana,sans-serif;background:0;font-size:14px;font-weight:700;margin:0 0 4px;padding:0;line-height:18px;height:36px}.atm-i #at_promo h4,.atm-i #at_testpromo h4{height:66px}#at_testpromo h4{font-size:13.5px}#at_promo h4 sup{font-size:11px;color:#ee6a44}#at_promo span{display:block}#_atssh{width:1px!important;height:1px!important;border:0!important}.at-promo-single{padding:10px;padding-top:2px;line-height:1.5em}.at-promo-single img{padding:3px}.at-promo-content img{margin-right:5px;margin-bottom:20px;float:left}.addthis_textshare{display:block;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABKCAYAAAAYJRJMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABmNJREFUeNrsmk9oI3UUx99vZjL5n7TbukLbxYve1INa8KAi6F48ubAHV2+KWCoqyF4WpZZ6cuthq1gKe1oU9+CCoLjg+uciCEWQPSjuReyy7Vq7W7LNJM0kM5nxvV9+U5JNk/xCm8wmMw8ek06TXyafee/93u83XwY1Y+jKwsLCiUwm87Gqqg8oigJBMsdxoFqtXs/n86fn5ua+plPoLhNw1NnZ2ZPZbPai67pgWRbQMUjGGINIJMKPOzs7p5aXly/h6apGkYMexZOLSA/K5TKYpgm2bQcKkKZpEIvFIBqNUnAs4qlv0U0CpKInt7a2pjC1+JuDBoeMsobcMAxKtSliQqcJEHmSIofCK8hGgMhEeSFABS+CopVKJfCAPBOAosRG82awEFATIKrNTPOKuAyg54/p8O6Lz0AylgKnVAEo4WxXruKIdW9SGBSNPCz9+jv8uFUdZEAchgcIZAC98+wjMK644Nz8B9x8GcCogFvarQHC6g9ModEhHk/CWw/eD5fX1wYZEDQAkinSCasCzvYdcAwsZgWLR6H78ttgRxDOd1+AbuTAxZnQrZiQsC0+5tAAkomgqmGCi/0C5EuYk5heWMKSj06DFU9B8fKXwBAgRHRe2qr4JTTm0ADyprj2gMocgJPIQnUkhhmlAMPBGEaLmRkDB18r2LJHSwb/kkEF1NBAdgPIMTFqbBOiL7wCypPP1apYMg0RPIzNvs+hFK6uAlz8hC9kZMYcKkBAk1KEpjwTtGKeF3oWT2ApUkEvl8Ct2qBZou5gLQoeIPzRDAty5colqHz/FQeTPHMObKxBhU8/AH17k69pIJ3ka+GhAoTrj84ppqje3gC6eD8WZBfP8887uIajFXEGZzXLkRpzYADRfkjHANIwv1yH9gZ49FDfY63+DI4eraVWIopwYgAp/NtmUmMODCAZy+EqfyyVxS66KKhWofLN55yXnsK0ymI9SscgMn4Ecuvrw7EN0s2b3/tpFT48/hSMJBKw1ypo0VrhjmtYn3SEpUJ+YxPOXPhhODbS0DPox9D/CJepDfYw+g0l5NDeQkAhoMMBRCV3LcSxZ2uCCQfkikXEEnopZMMZLAkmLrXGfE8anR5lUPNyH/rRgML5E/08+m/oW+iGJsBQ53dL/OM6ekr0SL3YpGYicl9Cf6zLz/6LfgH9NjRu9B54C0hwKAgwtwQT27tYiqARET1j6Gl0vUeAFDE2PVZ5Df0Jyc/dRD8nLr7spcAhAqLNKwN9W3zHHfoeVndH6aIT4sJjPYwgSum4uBGUyrPo0xJwzorovi3utNWDCDJF5OwKYA6jTS5W22tl4uK9Z2W9agEUcQOOoE+gT6K/2QYSwfkI/W/x+pb4AdVDTjNHjGl7Y5OxfosUxM2IiDpHETTVBlI9nBvo/6Hv0N3F6+7LVkHfG0W3dkesuoJIM+cG+mdikmgFZ7PfcPgN9Uvm0iKSJkQkTYqaUw8n3284vgJqAYkAjYsamBNR5BucrveDepFuyMhLNxDF0RCpnxdTrm9wfI+gfSIpJloAJnqdkp9w7hlAdZAUkV7etOv4CQfqGkF+cSsrKyfS6TQXcQZNCkOBQiJOwzBOz8zMNIs45+fnT46OjnIRJ0nwgijipGd6dMzlcqeQR6OIs1gsLpZKJf48nVQZw/BMq6v1j6pyAaeu6/S4qlnEub29PeVpo4MGxzNPbIGAmkWcGEEQNPF4y0VZ7YFno4iTtNEhoAZAjSLOEFAToEYRJxXoToCePurCG8cfh2QsCc4uNsDm/iLO3YIB569eg192tEEG1CjipAjq1Pu8Pv0QjDEHnI32Is5YPAmvTqTgymZuYHuiprUYRVAnQHHLlBdx4oxAYwYKkE0iTlVOxGm7MFyAZFLMIRGnJifipFSjMYcGkIym2SFlvSYr4hxcQPvuB8kA4utqJifipFo0qELyfQFJaZoVrSsR51DppGV+jOP1SZIizqECFIo4OwCSsVDE2cFCEWdo9RaKOGUsBBQCOhxAoYiz0dYgFHG2tFDE2cZCEWerdTiEIs6OgEIRp0QENYs468I+FHHeJeIEIV7wY3lzYBGn+EE9N9Wn2cK7W5Y4ErRrAtRkCzh7Urx+wfETUCtIf9UBOus3HOhRET5IurUVcfYbTtf7QT2wes00QBsRpx9w7oUIujuS9hVx+gWHX1jQpHbd2v8CDAAwldUwLVojIgAAAABJRU5ErkJggg==) no-repeat 0 0;width:44px;height:37px;line-height:28px;padding:0 0 0 28px;margin:0;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:9pt;color:#fff;cursor:pointer}.addthis_textshare:hover{background-position:0 -37px;text-decoration:none}.at_img_share{position:absolute;opacity:0;background:url(data:image/gif;base64,R0lGODlhFwAVAMQAAP7+/vLy8vv7+/X19fj4+Pz8/PHx8f39/fDw8O/v7/T09Pn5+fPz8/r6+vb29vf394CAgHZ2dm5ubklJSWRkZFtbW39/f4KCglJSUnt7e3h4eAAAAAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAAAXABUAAAWLICCOZGmeaAocbOu+MFvMdG3fs6DvfO//PY0QqGsYj8iMEslsLJ7QqGUarS4I2Kz2wtV6vwSIeEyGfB/odGTNbkfSaYd8Lqnb75L5fMDv+ymAfoKDghWGhH0KiouMGI6MkAoMk5SVE5eVmQwBnJ2en6ChoqMBBqanqKmqpgitrq+wsa0JtLW2t7i0IQA7) repeat-x bottom;border:1px solid #ccc;width:23px;height:21px;line-height:21px;text-indent:-9999px;padding:0;margin:0;cursor:pointer;z-index:1000}.at_img_share:hover{border-color:#8b8b8b}.at_img_share .addthis_toolbox{width:180px;margin:0 auto}.atm{width:10pc!important;padding:0;margin:0;line-height:9pt;letter-spacing:normal;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#444;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);padding:4px}.atm-f{text-align:right;border-top:1px solid #ddd;padding:5px 8px}.atm-i{background:#fff;border:1px solid #d5d6d6;padding:0;margin:0;box-shadow:1px 1px 5px rgba(0,0,0,.15)}.atm-s{margin:0!important;padding:0!important}.atm-s a:focus{border:transparent;outline:0;-webkit-transition:none;transition:none}#at_hover.atm-s a,.atm-s a{display:block;text-decoration:none;padding:4px 10px;color:#235dab!important;font-weight:400;font-style:normal;-webkit-transition:none;transition:none}#at_hover.atm-s .at_bold{color:#235dab!important}#at_hover.atm-s a:hover,.atm-s a:hover{background:#2095f0;text-decoration:none;color:#fff!important}#at_hover.atm-s .at_bold{font-weight:700}#at_hover.atm-s a:hover .at_bold{color:#fff!important}.atm-s a .at-label{vertical-align:middle;margin-left:5px;direction:ltr}.atm-i #atic_settings{border:none!important;border-top:1px solid #d5d6d6!important;padding-top:6px!important;top:4px}.at_a11y{position:absolute!important;top:auto!important;width:1px!important;height:1px!important;overflow:hidden!important}.at_a11y_container{margin:0;padding:0}.addthis_overlay_container{position:absolute}.addthis_overlay_toolbox{-webkit-border-top-left-radius:10px;-webkit-border-top-right-radius:10px;-moz-border-radius-topleft:10px;-moz-border-radius-topright:10px;border-top-left-radius:10px;border-top-right-radius:10px;padding:5px;background-color:#000;background-color:rgba(0,0,0,.6)}.linkServiceDiv{height:200px;width:25pc;border:1px solid #000;background-color:#aaa}.at_redloading{background:url(data:image/gif;base64,R0lGODlhCgAKAJEDAMzMzP9mZv8AAP///yH/C05FVFNDQVBFMi4wAwEAAAAh+QQFAAADACwAAAAACgAKAAACF5wncgaAGgJzJ647cWua4sOBFEd62VEAACH5BAUAAAMALAEAAAAIAAMAAAIKnBM2IoMDAFMQFAAh+QQFAAADACwAAAAABgAGAAACDJwHMBGofKIRItJYAAAh+QQFAAADACwAAAEAAwAIAAACChxgOBPBvpYQYxYAIfkEBQAAAwAsAAAEAAYABgAAAgoEhmPJHOGgEGwWACH5BAUAAAMALAEABwAIAAMAAAIKBIYjYhOhRHqpAAAh+QQFAAADACwEAAQABgAGAAACDJwncqi7EQYAA0p6CgAh+QQJAAADACwHAAEAAwAIAAACCpRmoxoxvQAYchQAOw==);height:1pc;width:1pc;background-repeat:no-repeat;margin:0 auto}.at-promo-single-dl-ch{width:90pt;height:37px}.at-promo-single-dl-ff{width:90pt;height:44px}.at-promo-single-dl-saf{width:90pt;height:3pc}.at-promo-single-dl-ie{width:129px;height:51px}.atPinBox{position:fixed;top:25%;left:35%;background:#fff;width:482px;margin:0 auto;overflow:auto;overflow-x:hidden;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBgaGAgAjAxEAlGFVJHIUCAAQDcngCUgqGMqwAAAABJRU5ErkJggg==);border-radius:8px;-webkit-border-radius:8px;-moz-border-radius:8px;padding:8px;font-family:arial,helvetica,tahoma,verdana,sans-serif;font-size:9pt;color:#cfcaca;z-index:10000001}.atPinHdr,.atPinWinHdr{display:block;background:#f1f1f1;border-bottom:1px solid #ccc;box-shadow:0 0 3px rgba(0,0,0,.1);-webkit-box-shadow:0 0 3px rgba(0,0,0,.1);-moz-box-shadow:0 0 3px rgba(0,0,0,.1);padding:8px 10px;font-size:1pc;line-height:1pc;color:#8c7e7e}.atPinHdr img,.atPinWinHdr img{vertical-align:bottom;margin-left:5px;cursor:pointer}.atPinHdr span{vertical-align:top}.atPinHdr{height:1pc}.atPinMn{background:#fff;padding:10px;height:296px;overflow:auto;overflow-x:hidden;text-align:center;position:relative}.atPinHdrMsg{left:20px}.atPinClose{width:9pt;text-align:right;font-weight:700;position:absolute;right:15px;cursor:pointer}.atImgSpanOuter{position:relative;overflow:hidden;height:200px;width:200px;border:1px solid #a0a0a0;float:left;display:block;margin:10px;background-color:#fff}.atImgSpanInner img{cursor:pointer}.atImgSpanSize{position:absolute;bottom:0;left:0;right:0;display:block;background:#fff;height:22px;line-height:24px;color:#000;overflow:hidden;font-size:10px;zoom:1;filter:alpha(opacity=70);opacity:.7}.atImgActBtn{display:none;width:2pc;height:2pc;position:absolute;top:75px;left:5pc;background-color:#fff}.atPinWin{font-family:arial,helvetica,tahoma,verdana,sans-serif;text-align:center}.atPinWinHdr{display:block;font-size:20px;height:20px;width:100%;position:fixed;z-index:1}.atPinWinMn{text-align:center;padding:40px 0 0;display:inline-block}.atImgIco,.atImgMsg{float:left}.atImgIco{margin-right:5px}.atNoImg{display:block;margin-top:40px;font-size:1pc;line-height:1pc;color:#8c7e7e}.at_PinItButton{display:block;width:40px;height:20px;padding:0;margin:0;background-image:url(//s7.addthis.com/static/t00/pinit00.png);background-repeat:no-repeat}.at_PinItButton:hover{background-position:0 -20px}.addthis_toolbox .addthis_button_pinterest_pinit{position:relative}.at-share-tbx-element .fb_iframe_widget span{vertical-align:baseline!important}.at3PinWinMn{text-align:center;padding:20px 0 0 20px;overflow:auto;height:437px}.at3ImgSpanOuter{position:relative;width:185px;height:185px;border:1px solid #dedede;margin:0 10px 10px 0;overflow:hidden;float:left}.at3ImgSpanOuter:hover{border-color:#3dadfc;box-shadow:0 0 3px #3dadfc;cursor:pointer}.at3ImgSpanOuter .atImgLB{display:block;position:absolute;top:0;bottom:0;left:0;right:0;z-index:1;background-color:rgba(0,0,0,.8);background-repeat:no-repeat;background-position:center center}#at3lb{position:fixed;top:0;right:0;left:0;bottom:0;z-index:16777270;display:none}.at3lblight{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpizCuu/sRABGBiIBKMKqSOQoAAAwC8KgJipENhxwAAAABJRU5ErkJggg==);background:hsla(217,6%,46%,.65)}.at3lbdark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABtJREFUeNpiZGBg2M9ABGBiIBKMKqSOQoAAAwBAlwDTJEe1aAAAAABJRU5ErkJggg==);background:rgba(0,0,0,.5)}.at3lbnone{background:hsla(0,0%,100%,0)}#at3win{position:fixed;_position:absolute;top:15%;left:50%;margin-left:-20pc;background:#fff;border:1px solid #d2d2d1;width:40pc;box-shadow:0 0 8px 4px rgba(0,0,0,.25);font-family:helvetica neue,helvetica,arial,sans-serif;z-index:16777271;display:none;overflow:hidden}#at3win #at3winheader{position:relative;border-bottom:1px solid #d2d2d1;background:#f1f1f1;height:49px;cursor:default}#at3win #at3winheader p{position:absolute;top:1pc;left:75pt;width:475px;padding:0;margin:0;font-size:14px;line-height:18px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#at3win #at3winheader h3{height:49px;text-align:left;line-height:49px;margin:0 50px 0 22px;border:0;padding:0 20px;font-size:1pc;font-family:helvetica neue,helvetica,arial,sans-serif;font-weight:700;text-shadow:0 1px #fff;color:#333;direction:ltr}#at3win #at3winheader h3.logoaddthis{padding-left:22px}#at3win #at3winheader .at3winheadersvc{display:inline-block;position:absolute;top:15px;left:20px;cursor:default!important;opacity:1!important}#at3win #at3winheader .at3winheadersvc .at-icon,#at3win #at3winheader .at3winheadersvc .at-icon-wrapper{display:block}#at3win #at3winheader #at3winheaderclose{display:block;position:absolute;top:0;right:0;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2tpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wUmlnaHRzPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvcmlnaHRzLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcFJpZ2h0czpNYXJrZWQ9IkZhbHNlIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQwNzc2QTQ5Qjk1RDExRTFCMkE4OEUxNTUwRjMwREY0IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQwNzc2QTQ4Qjk1RDExRTFCMkE4OEUxNTUwRjMwREY0IiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDUzMgTWFjaW50b3NoIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InV1aWQ6OEE1QUU0REMzMEU4REYxMUJCNzJGQkJCQzlBM0Y1RkMiIHN0UmVmOmRvY3VtZW50SUQ9InV1aWQ6M0M5RkJGRTEyQUU4REYxMUJCNzJGQkJCQzlBM0Y1RkMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz78RHhFAAAApUlEQVR42rxTiQnAIAxU6QAdxRW6iZ1EnKRu4gqO0g1sCilEvT7Q0kBQ9O4wl6hLKepNGPUyhmMTQhhpSZTZez8jMGEWWizlRJi1fUHiS8dARHaMSaiELPaViCB3WC1NBMB4CMozWaJuuwBE1BkZdoEB8Qn5kzaaC7fbgN0xN+TYlNOJmCvyXjPwpBKRL7BnhgERiwQmHhDothDJjMVz8Ptv3AQYAJWjVVdnlDZCAAAAAElFTkSuQmCC);background-repeat:no-repeat;background-position:center center;border-left:1px solid #d2d2d1;width:49px;height:49px;line-height:49px;overflow:hidden;text-indent:-9999px;text-shadow:none;cursor:pointer}#at3win #at3winheader #at3winheaderclose:hover{background-color:#dedede}#at3win #at3wincontent{height:450px;position:relative}#at3wincopy,#at3winemail,#at3winshare{height:450px}#ate-promo .addthis_button_twitter .aticon-twitter{background-position:0 -4pc!important}#at3wincontent{-o-box-sizing:content-box;box-sizing:content-box}#at3win #at3wincontent.at3nowin{position:relative;height:25pc;padding:20px;overflow:auto}#at3winfooter{position:relative;background:#fff;-o-box-sizing:content-box;box-sizing:content-box;border-top:1px solid #d2d2d1;height:11px;_height:20px;line-height:11px;padding:5px 20px;font-size:11px;color:#666}#at3winfooter a{margin-right:10px;text-decoration:none;color:#666;float:left}#at3winfooter a:hover{text-decoration:none;color:#000}#at3logo{background:url(//s7.addthis.com/static/t00/at3logo-sm.gif) no-repeat left center!important;padding-left:10px}#at3privacy{position:absolute;top:5px;right:10px;background:url(//s7.addthis.com/static/t00/at3-privacy.gif) no-repeat right center!important;padding-right:14px}#at3winfilter{background:#f1f1f1;border-top:1px solid #fff;border-bottom:1px solid #d2d2d1;padding:13px 0;text-align:center}#at3winsvc-filter{background-repeat:no-repeat;background-position:right;background-image:url(data:image/gif;base64,R0lGODlhHgAUALMAAJiYmHV1deTk5Kmpqbe3t9nZ2Y2Njfn5+fT09Ozs7MnJyYGBgWpqav39/WZmZv///yH5BAAAAAAALAAAAAAeABQAAASi8MlXxgoLqDa7/xICOGTpLAKoTshCMsZgBG+6gqNjJA93DAxH4HDzCEgGTqdBIBGKnSYjoewcXAvoZJRVDUhErcEBWClIPC1X1fg6ENrHl4GoThquQJxCKn+kA3sPY2QHSkwMQQJ2Nw0INEIABBYmATZxCQtBJpyWgg0KBkEMCwQKm0KXgoYTBaiegh8NriUBabFLtH24Hg2zm368HgULKDcRADs=);border:1px solid #d2d2d1;padding:15px 38px 15px 9pt;margin:0 auto;width:374px;text-align:left;font-size:18px;border-radius:5px;box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-webkit-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);-moz-box-shadow:inset 0 1px 2px rgba(0,0,0,.1);color:#666}#service-filter:hover{border-color:#9c9c9c}#service-filter:focus{border-color:#3dadfc;box-shadow:0 0 4px rgba(61,173,252,.8);-webkit-box-shadow:0 0 4px rgba(61,173,252,.8);-moz-box-shadow:0 0 4px rgba(61,173,252,.8);outline:0}#at3wintoolbox{margin:0 0 0 20px;height:340px;overflow:auto;padding:10px 0}#at3wintoolbox a{display:block;float:left;width:180px;padding:4px;margin-bottom:10px;text-decoration:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;font-size:1pc;color:#235dab}#at3wintoolbox a:focus,#at3wintoolbox a:hover{background-color:#2095f0}#at3wintoolbox a:focus,#at3wintoolbox a:hover,#at3wintoolbox span:hover{text-decoration:none;color:#fff;font-weight:400;text-shadow:none;opacity:1;filter:alpha(opacity=100);cursor:pointer}#at3wintoolbox span{display:block;height:2pc;line-height:2pc;padding-left:38px!important;width:auto!important}.service-icon{padding:4px 8px}.service-icon:hover{background:#2095f0;color:#fff}.service-icon span{padding-left:20px}#at3winssi{position:absolute;right:50px;top:0;height:50px;display:block}.at-quickshare-header-peep{position:absolute;top:0;right:34px;height:1pc;padding:6px;border-left:1px solid #dedede;cursor:pointer}.at-quickshare-header-peep.peep-active{background:#dedede;cursor:default}.at-quickshare-header-peep span{display:inline-block;background:url(data:image/gif;base64,R0lGODlhBwAEAIABALm5uf///yH5BAEAAAEALAAAAAAHAAQAAAIIhA+BGWoNWSgAOw==) no-repeat right;padding-right:11px}.at-quickshare-header-peep span img{display:block;background:#ccc;width:1pc;height:1pc;line-height:20px;overflow:hidden;text-indent:-9999px;border:1px solid #bbb;border-radius:3px;-webkit-border-radius:3px;-moz-border-radius:3px}.at-quickshare-header-peep ul{position:absolute;top:25px;left:-75px;width:140px;background:#fff;border:1px solid #bbb;border-radius:4px;box-shadow:0 1px 4px hsla(0,0%,40%,.8);margin:0;padding:0;font-weight:400;z-index:1100}.at-quickshare-header-peep ul li{list-style:none;font-size:9pt;padding:0;margin:0;text-align:left}.at-quickshare-menu{outline:0}.at-quickshare-menu li.at-quickshare-menu-sep{border-bottom:1px solid #dedede}.at-quickshare-header-peep ul li a{display:block;padding:5px 10px;text-decoration:none;color:#666}.at-quickshare-header-peep ul li a:hover{background:#0d98fb;text-decoration:none;color:#fff}#at_auth{position:relative;box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;-o-box-sizing:content-box;border-top:1px solid #d5d6d6!important;padding:10px 10px 7px;line-height:1pc;height:1pc}#atic_signin{cursor:pointer}#atic_signin,#atic_signin:hover{text-decoration:none}#atic_signin #at_auth:hover{background:#2095f0;text-decoration:none;color:#fff!important}#atic_usersettings{cursor:pointer}#atic_usersettings:hover{text-decoration:underline}#atic_usersignout{font-size:11px;position:absolute;top:10px;right:10px;cursor:pointer}#atic_usersignout:hover{text-decoration:underline}#at_auth img{width:1pc;height:1pc;overflow:hidden;border:none;padding:0;margin:0 5px 0 0;float:left}#at_auth a{text-decoration:none}#at16pf{height:auto;text-align:right;padding:4px 8px}.at-privacy-info{position:absolute;left:7px;bottom:7px;cursor:pointer;text-decoration:none;font-family:helvetica,arial,sans-serif;font-size:10px;line-height:9pt;letter-spacing:.2px;color:#666}.at-privacy-info:hover{color:#000}@media screen and (max-width:680px){#at3win{width:95%;left:auto;margin-left:auto}}@media print{#at3win,#at4-follow,#at4-share,#at4-thankyou,#at4-whatsnext,#at4m-mobile,#at15s,.at4,.at4-recommended{display:none!important}}@media screen and (max-width:400px){.at4win{width:100%}}@media screen and (max-height:700px) and (max-width:400px){.at4-thankyou-inner .at4-recommended-container{height:122px;overflow:hidden}.at4-thankyou-inner .at4-recommended .at4-recommended-item:first-child{border-bottom:1px solid #c5c5c5}}</style><style type="text/css">.at-branding-logo{font-family:helvetica,arial,sans-serif;text-decoration:none;font-size:10px;display:inline-block;margin:2px 0;letter-spacing:.2px}.at-branding-logo .at-branding-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAZQTFRF////+GlNUkcc1QAAAB1JREFUeNpiYIQDBjQmAwMmkwEM0JnY1WIxFyDAABGeAFEudiZsAAAAAElFTkSuQmCC")}.at-branding-logo .at-branding-icon,.at-branding-logo .at-privacy-icon{display:inline-block;height:10px;width:10px;margin-left:4px;margin-right:3px;margin-bottom:-1px;background-repeat:no-repeat}.at-branding-logo .at-privacy-icon{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAMAAABR24SMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABhQTFRF8fr9ot/xXcfn2/P5AKva////////AKTWodjhjAAAAAd0Uk5T////////ABpLA0YAAAA6SURBVHjaJMzBDQAwCAJAQaj7b9xifV0kUKJ9ciWxlzWEWI5gMF65KUTv0VKkjVeTerqE/x7+9BVgAEXbAWI8QDcfAAAAAElFTkSuQmCC")}.at-branding-logo span{text-decoration:none}.at-branding-logo .at-branding-addthis,.at-branding-logo .at-branding-powered-by{color:#666}.at-branding-logo .at-branding-addthis:hover{color:#333}.at-cv-with-image .at-branding-addthis,.at-cv-with-image .at-branding-addthis:hover{color:#fff}a.at-branding-logo:visited{color:initial}.at-branding-info{display:inline-block;padding:0 5px;color:#666;border:1px solid #666;border-radius:50%;font-size:10px;line-height:9pt;opacity:.7;transition:all .3s ease;text-decoration:none}.at-branding-info span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.at-branding-info:before{content:'i';font-family:Times New Roman}.at-branding-info:hover{color:#0780df;border-color:#0780df}</style><script type="text/javascript" charset="utf-8" async="" src="//s7.addthis.com/static/menu.1d0464078c391d128d82.js"></script><style type="text/css"></style><script type="text/javascript" charset="utf-8" async="" src="//s7.addthis.com/static/layers.c611f4081b564e4fa73d.js"></script></head>
+
+  <body>
+    <div class="content-wrapper" style="padding-bottom: 138px;">
+      
+      <div class="navbar navbar-inverse navbar-extra">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">LeetCode OJ</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              
+              <li id="subscribe">
+                <a href="/subscribe/"><font color="orange">Subscribe</font></a>
+              </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                  Problems
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  
+                  <li><a href="/problemset/algorithms/">Algorithms</a></li>
+                  
+                  <li><a href="/problemset/database/">Database</a></li>
+                  
+                  <li><a href="/problemset/shell/">Shell</a></li>
+                  
+                </ul>
+              </li>
+              
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    Mock
+                    <span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a href="/mockinterview/">Mock Interview</a>
+                    </li>
+                    <li>
+                      <a href="/mockinterview/session/list/">Past Sessions</a>
+                    </li>
+                  </ul>
+                </li>
+              
+              
+                <li><a href="/contest/">Contest</a></li>
+              
+              
+                <li id="coursesNav"><a href="/courses/">Courses</a></li>
+              
+              <li id="articlesNav"><a href="/articles/">Articles</a></li>
+              <!-- TODO: not hard code -->
+              
+              <li id=""><a href="https://discuss.leetcode.com" target="_blank">Discuss</a></li>
+              
+              
+              <li id="bookNav" class="hidden-sm"><a onclick="ga('send', 'event', 'book', 'click', 'nav-bar');" href="/book/"><font color="#ed9c28">Book</font></a></li>
+              
+              
+              
+              
+            </ul>
+            
+            <ul id="navbar-right" class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <!--<img src="https://www.gravatar.com/avatar/55f7d17f598368776e4375d084cbde7b?s=25" />&nbsp&nbsp-->raydai
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/profile/">Profile</a></li>
+                
+                  <li><a href="/subscription/">My Subscription</a></li>
+                
+                <li class="divider"></li>
+                <li><a href="/submissions/">My Submissions</a></li>
+                <li><a href="/progress/">My Progress</a></li>
+                <li><a href="/session/">Manage Sessions</a></li>
+                <!-- TODO:  Dashboard  -->
+                <li><a href="/accounts/password/change/">Change Password</a></li>
+                <li class="divider"></li>
+                <li><a href="/accounts/logout/">Sign out</a></li>
+              </ul>
+              </li>
+            </ul>
+            
+            <!--
+            <form class="navbar-form pull-right">
+              <input class="col-md-2" type="text" placeholder="Email">
+              <input class="col-md-2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+            </form>
+            -->
+          </div><!--/.navbar-collapse -->
+        </div>
+      </div>
+
+       
+
+<div ng-app="app" ng-controller="questionDetailCtrl as detailCtrl" ng-init="detailCtrl.init(&#10;        156,&#10;         false,&#10;        '/problems/favor/'&#10;        )" class="ng-scope">
+  <div class="notepad-wrapper">
+    
+      <div class="notepad-toggle-button btn-warning btn">
+        <i class="notepad-icon fa fa-sticky-note-o" aria-hidden="true"></i>Notes
+      </div>
+    
+    <div class="tips" style="bottom: -48px;">Auto Saved.</div>
+    <textarea id="notepad" style="display: none;"></textarea><div class="editor-toolbar"><a title="Bold (Cmd-B)" tabindex="-1" class="fa fa-bold"></a><a title="Italic (Cmd-I)" tabindex="-1" class="fa fa-italic"></a><a title="Heading (Cmd-H)" tabindex="-1" class="fa fa-header"></a><i class="separator">|</i><a title="Code (Cmd-⌥-C)" tabindex="-1" class="fa fa-code"></a><a title="Generic List (Cmd-L)" tabindex="-1" class="fa fa-list-ul"></a><a title="Numbered List (Cmd-⌥-L)" tabindex="-1" class="fa fa-list-ol"></a><i class="separator">|</i><a title="Create Link (Cmd-K)" tabindex="-1" class="fa fa-link"></a><a title="Insert Image (Cmd-⌥-I)" tabindex="-1" class="fa fa-picture-o"></a><i class="separator">|</i><a title="Toggle Preview (Cmd-P)" tabindex="-1" class="fa fa-eye no-disable"></a></div><div class="CodeMirror cm-s-paper CodeMirror-wrap CodeMirror-empty"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 15px; left: 15px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-vscrollbar" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: -15px; border-right-width: 15px; min-height: 28px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><pre class="CodeMirror-placeholder" style="height: 0px; overflow: visible;">Type here...(Markdown is enabled)</pre><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 20px;"> </div></div><div class="CodeMirror-code"><pre class=" CodeMirror-line "><span style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 15px; width: 1px; border-bottom: 0px solid transparent; top: 28px;"></div><div class="CodeMirror-gutters" style="display: none; height: 43px;"></div></div></div><div class="editor-preview-side"></div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="question-title clearfix">
+          <h3>156. Binary Tree Upside Down</h3>
+          <i class="fa fa-lg fa-star add-favor not-favor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="save to favorite" ng-click="detailCtrl.favor()" ng-class="{'favor': detailCtrl.is_favor, 'not-favor': !detailCtrl.is_favor}" data-original-title="" title="">
+          </i>
+          <span ng-show="detailCtrl.is_alert" class="alert alert-info ng-hide">
+            Please login first.
+          </span>
+          <div class="pull-right top-buttons">
+            
+              
+              <div class="btn-group right-pad">
+                <button type="button" class="btn btn-default active">Question</button>
+                
+                  <button type="button" class="btn btn-default " data-toggle="tooltip" data-placement="top" title="" onclick="confirmations.requestSolution(event, false, '/request/solution/binary-tree-upside-down/');" data-original-title="Not available yet, please check back later.">
+                    Editorial Solution
+                  </button>
+                
+              </div>
+              <a class="btn btn-default" href="/problems/binary-tree-upside-down/submissions/">My Submissions</a>
+              
+            
+          </div>
+        </div>
+        <div class="row col-md-12">
+
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="question-info text-info">
+              <ul>
+                <li>Total Accepted: <strong>13685</strong></li>
+                <li>Total Submissions: <strong>34180</strong></li>
+                <li>Difficulty: <strong>Medium</strong></li>
+              </ul>
+            </div>
+            <div class="question-content">
+              <p></p><p>
+Given a binary tree where all the right nodes are either leaf nodes with a sibling (a left node that shares the same parent node) or empty, flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. Return the new root.
+</p>
+
+For example:<br />
+Given a binary tree <code>{1,2,3,4,5}</code>,<br />
+<pre>    1
+   / \
+  2   3
+ / \
+4   5
+</pre>
+<p></p>
+<p>
+return the root of the binary tree <code>[4,5,2,#,#,3,1]</code>.<br />
+</p><pre>   4
+  / \
+ 5   2
+    / \
+   3   1  
+</pre>
+<p></p>
+
+<p class="showspoilers">confused what <code>"{1,#,2,3}"</code> means? <a href="#" onclick="showSpoilers(this); return false;">&gt; read more on how binary tree is serialized on OJ.</a></p>
+
+<div class="spoilers" style="display: none;"><br /><b>OJ's Binary Tree Serialization:</b>
+<p>
+The serialization of a binary tree follows a level order traversal, where '#' signifies a path terminator where no node exists below.
+</p>
+<p>
+Here's an example:<br />
+</p><pre>   1
+  / \
+ 2   3
+    /
+   4
+    \
+     5
+</pre>
+The above binary tree is serialized as <code>"{1,2,3,#,#,4,#,#,5}"</code>. 
+<p></p>
+</div><p></p>
+              
+              
+                
+                  <div>
+                    <div id="company_tags" class="btn btn-xs btn-warning">Show Company Tags</div>
+                    <span class="hidebutton">
+                      
+                        <a class="btn btn-xs btn-primary" href="/company/linkedin/">LinkedIn</a>
+                      
+                    </span>
+                  </div>
+                
+              
+
+              
+                <div>
+                  <div id="tags" class="btn btn-xs btn-warning">Show Tags</div>
+                  <span class="hidebutton">
+                    
+                    <a class="btn btn-xs btn-primary" href="/tag/tree/">Tree</a>
+                    
+                  </span>
+                </div>
+              
+
+              
+                <div>
+                  <div id="similar" class="btn btn-xs btn-warning">Show Similar Problems</div>
+                  <span class="hidebutton">
+                    
+                    <a class="btn btn-xs btn-primary" href="/problems/reverse-linked-list/"> (E) Reverse Linked List</a>
+                    
+                  </span>
+                </div>
+              
+              
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div id="interviewed-div">
+      <form id="interviewed-form" method="post" action="/interviewed/" class="ng-pristine ng-valid">
+        <input type="hidden" name="csrfmiddlewaretoken" value="oLl2CcSDhaIAX136ga1V0O00TKppi4jw" />
+        <input type="hidden" name="question_id" value="156" />
+        <input type="hidden" name="feedback" value="Thanks for your feedback." />
+        <input type="hidden" name="option" />
+        <input type="hidden" name="is_interviewed" value="false" />
+        <input type="hidden" name="time_option" />
+        <input type="hidden" name="company_id" value="0" />
+        <input type="hidden" name="interviewedstats_id" value="0" />
+      </form>
+      <div id="survey">
+        <div id="general_questions">
+          <span>Have you met this question in a real interview?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span id="yes-or-no-options">
+            <div value="true" name="is_interviewed" id="yes" follow_up="#yes_questions" class="submit btn btn-default btn-xs">
+              Yes
+            </div>
+            <div value="false" name="is_interviewed" id="no" class="submit btn btn-default btn-xs">
+              No
+            </div>
+          </span>
+        </div>
+        <div id="yes_questions" class="hide">
+          <span>When did you meet this question?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span>
+            
+              <div value="0" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                last week
+              </div>
+            
+              <div value="1" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                last month
+              </div>
+            
+              <div value="2" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                last 3 month
+              </div>
+            
+              <div value="3" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                last 6 month
+              </div>
+            
+              <div value="4" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                more than 6 months
+              </div>
+            
+              <div value="5" follow_up="#company_questions" name="time_option" class="submit btn btn-default btn-xs">
+                other
+              </div>
+            
+          </span>
+        </div>
+
+        <div id="company_questions" class="hide">
+          <span>Which company asked you this question?</span>
+          <span class="text-info chosen_option text-bold"></span>
+          <span>
+          
+            <div value="38" name="company_id" class="submit btn btn-default btn-xs">
+              Adobe
+            </div>
+          
+            <div value="12" name="company_id" class="submit btn btn-default btn-xs">
+              Airbnb
+            </div>
+          
+            <div value="51" name="company_id" class="submit btn btn-default btn-xs">
+              Alation
+            </div>
+          
+            <div value="22" name="company_id" class="submit btn btn-default btn-xs">
+              Alibaba
+            </div>
+          
+            <div value="1" name="company_id" class="submit btn btn-default btn-xs">
+              Amazon
+            </div>
+          
+            <div value="2" name="company_id" class="submit btn btn-default btn-xs">
+              Apple
+            </div>
+          
+            <div value="44" name="company_id" class="submit btn btn-default btn-xs">
+              Arista
+            </div>
+          
+            <div value="20" name="company_id" class="submit btn btn-default btn-xs">
+              Baidu
+            </div>
+          
+            <div value="71" name="company_id" class="submit btn btn-default btn-xs">
+              Blend Labs
+            </div>
+          
+            <div value="58" name="company_id" class="submit btn btn-default btn-xs">
+              Blizzard
+            </div>
+          
+            <div value="13" name="company_id" class="submit btn btn-default btn-xs">
+              Bloomberg
+            </div>
+          
+            <div value="52" name="company_id" class="submit btn btn-default btn-xs">
+              Box
+            </div>
+          
+            <div value="30" name="company_id" class="submit btn btn-default btn-xs">
+              Bungie
+            </div>
+          
+            <div value="18" name="company_id" class="submit btn btn-default btn-xs">
+              Cisco
+            </div>
+          
+            <div value="77" name="company_id" class="submit btn btn-default btn-xs">
+              Conviva
+            </div>
+          
+            <div value="73" name="company_id" class="submit btn btn-default btn-xs">
+              Coursera
+            </div>
+          
+            <div value="45" name="company_id" class="submit btn btn-default btn-xs">
+              CreditEase
+            </div>
+          
+            <div value="48" name="company_id" class="submit btn btn-default btn-xs">
+              Deutsche Bank
+            </div>
+          
+            <div value="24" name="company_id" class="submit btn btn-default btn-xs">
+              Dropbox
+            </div>
+          
+            <div value="23" name="company_id" class="submit btn btn-default btn-xs">
+              eBay
+            </div>
+          
+            <div value="19" name="company_id" class="submit btn btn-default btn-xs">
+              Electronic Arts
+            </div>
+          
+            <div value="68" name="company_id" class="submit btn btn-default btn-xs">
+              EMC
+            </div>
+          
+            <div value="39" name="company_id" class="submit btn btn-default btn-xs">
+              Epic Systems
+            </div>
+          
+            <div value="27" name="company_id" class="submit btn btn-default btn-xs">
+              Expedia
+            </div>
+          
+            <div value="3" name="company_id" class="submit btn btn-default btn-xs">
+              Facebook
+            </div>
+          
+            <div value="60" name="company_id" class="submit btn btn-default btn-xs">
+              Flipkart
+            </div>
+          
+            <div value="32" name="company_id" class="submit btn btn-default btn-xs">
+              Fortinet
+            </div>
+          
+            <div value="70" name="company_id" class="submit btn btn-default btn-xs">
+              FreeWheel
+            </div>
+          
+            <div value="35" name="company_id" class="submit btn btn-default btn-xs">
+              Goldman Sachs
+            </div>
+          
+            <div value="4" name="company_id" class="submit btn btn-default btn-xs">
+              Google
+            </div>
+          
+            <div value="34" name="company_id" class="submit btn btn-default btn-xs">
+              GrabTaxi
+            </div>
+          
+            <div value="65" name="company_id" class="submit btn btn-default btn-xs">
+              Groupon
+            </div>
+          
+            <div value="64" name="company_id" class="submit btn btn-default btn-xs">
+              Hedvig
+            </div>
+          
+            <div value="62" name="company_id" class="submit btn btn-default btn-xs">
+              Hulu
+            </div>
+          
+            <div value="17" name="company_id" class="submit btn btn-default btn-xs">
+              Intel
+            </div>
+          
+            <div value="28" name="company_id" class="submit btn btn-default btn-xs">
+              Jane Street
+            </div>
+          
+            <div value="36" name="company_id" class="submit btn btn-default btn-xs">
+              JPMorgan
+            </div>
+          
+            <div value="37" name="company_id" class="submit btn btn-default btn-xs">
+              Jump Trading
+            </div>
+          
+            <div value="59" name="company_id" class="submit btn btn-default btn-xs">
+              Lending Club
+            </div>
+          
+            <div value="5" name="company_id" class="submit btn btn-default btn-xs">
+              LinkedIn
+            </div>
+          
+            <div value="54" name="company_id" class="submit btn btn-default btn-xs">
+              LiveRamp
+            </div>
+          
+            <div value="40" name="company_id" class="submit btn btn-default btn-xs">
+              Marvel
+            </div>
+          
+            <div value="42" name="company_id" class="submit btn btn-default btn-xs">
+              Matlab
+            </div>
+          
+            <div value="49" name="company_id" class="submit btn btn-default btn-xs">
+              McKesson
+            </div>
+          
+            <div value="6" name="company_id" class="submit btn btn-default btn-xs">
+              Microsoft
+            </div>
+          
+            <div value="61" name="company_id" class="submit btn btn-default btn-xs">
+              Morgan Stanley
+            </div>
+          
+            <div value="21" name="company_id" class="submit btn btn-default btn-xs">
+              Nvidia
+            </div>
+          
+            <div value="25" name="company_id" class="submit btn btn-default btn-xs">
+              Oracle
+            </div>
+          
+            <div value="67" name="company_id" class="submit btn btn-default btn-xs">
+              Orbitz
+            </div>
+          
+            <div value="53" name="company_id" class="submit btn btn-default btn-xs">
+              Palantir
+            </div>
+          
+            <div value="72" name="company_id" class="submit btn btn-default btn-xs">
+              Paypal
+            </div>
+          
+            <div value="9" name="company_id" class="submit btn btn-default btn-xs">
+              Pinterest
+            </div>
+          
+            <div value="16" name="company_id" class="submit btn btn-default btn-xs">
+              Pocket Gems
+            </div>
+          
+            <div value="46" name="company_id" class="submit btn btn-default btn-xs">
+              Qualtrics
+            </div>
+          
+            <div value="75" name="company_id" class="submit btn btn-default btn-xs">
+              Qumulo
+            </div>
+          
+            <div value="76" name="company_id" class="submit btn btn-default btn-xs">
+              Quora
+            </div>
+          
+            <div value="33" name="company_id" class="submit btn btn-default btn-xs">
+              Rackspace
+            </div>
+          
+            <div value="69" name="company_id" class="submit btn btn-default btn-xs">
+              Salesforce
+            </div>
+          
+            <div value="41" name="company_id" class="submit btn btn-default btn-xs">
+              Sina
+            </div>
+          
+            <div value="8" name="company_id" class="submit btn btn-default btn-xs">
+              Snapchat
+            </div>
+          
+            <div value="63" name="company_id" class="submit btn btn-default btn-xs">
+              Square
+            </div>
+          
+            <div value="50" name="company_id" class="submit btn btn-default btn-xs">
+              Sumologic
+            </div>
+          
+            <div value="55" name="company_id" class="submit btn btn-default btn-xs">
+              Symantec
+            </div>
+          
+            <div value="26" name="company_id" class="submit btn btn-default btn-xs">
+              Tencent
+            </div>
+          
+            <div value="66" name="company_id" class="submit btn btn-default btn-xs">
+              TinyCo
+            </div>
+          
+            <div value="31" name="company_id" class="submit btn btn-default btn-xs">
+              Tradeshift
+            </div>
+          
+            <div value="56" name="company_id" class="submit btn btn-default btn-xs">
+              TripAdvisor
+            </div>
+          
+            <div value="7" name="company_id" class="submit btn btn-default btn-xs">
+              Twitter
+            </div>
+          
+            <div value="47" name="company_id" class="submit btn btn-default btn-xs">
+              Two Sigma
+            </div>
+          
+            <div value="11" name="company_id" class="submit btn btn-default btn-xs">
+              Uber
+            </div>
+          
+            <div value="57" name="company_id" class="submit btn btn-default btn-xs">
+              VMware
+            </div>
+          
+            <div value="74" name="company_id" class="submit btn btn-default btn-xs">
+              Walmart
+            </div>
+          
+            <div value="14" name="company_id" class="submit btn btn-default btn-xs">
+              Yahoo
+            </div>
+          
+            <div value="43" name="company_id" class="submit btn btn-default btn-xs">
+              Yandex
+            </div>
+          
+            <div value="15" name="company_id" class="submit btn btn-default btn-xs">
+              Yelp
+            </div>
+          
+            <div value="10" name="company_id" class="submit btn btn-default btn-xs">
+              Zenefits
+            </div>
+          
+            <div value="29" name="company_id" class="submit btn btn-default btn-xs">
+              Zynga
+            </div>
+          
+          <a href="mailto:admin@leetcode.com?subject=Please add new company"><span class="glyphicon glyphicon-plus" title="Add a new company"></span></a>
+          </span>
+        </div>
+      </div>
+      <div id="interviewed-state">
+      </div>
+    </div>
+    
+    
+    <p class="action">
+      
+        <a class="btn btn-success btn-pad right-pad" href="https://leetcode.com/discuss/questions/oj/binary-tree-upside-down" target="_blank">Discuss</a>
+      
+      
+        
+      
+      
+      <a id="pick-btn" class="btn btn-primary btn-pad" onclick="ga('send', 'event', 'pick-one-detail', 'click');" href="/problems/random-one-question/">Pick One</a>
+      
+    </p>
+    
+    <hr />
+  </div>
+
+  <div class="container ng-scope" ng-controller="AceCtrl as aceCtrl" ng-init="aceCtrl.init(&#10;        [{'value': 'cpp', 'text': 'C++', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * struct TreeNode {\u000D\u000A *     int val\u003B\u000D\u000A *     TreeNode *left\u003B\u000D\u000A *     TreeNode *right\u003B\u000D\u000A *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}\u000D\u000A * }\u003B\u000D\u000A */\u000D\u000Aclass Solution {\u000D\u000Apublic:\u000D\u000A    TreeNode* upsideDownBinaryTree(TreeNode* root) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}\u003B' },{'value': 'java', 'text': 'Java', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * public class TreeNode {\u000D\u000A *     int val\u003B\u000D\u000A *     TreeNode left\u003B\u000D\u000A *     TreeNode right\u003B\u000D\u000A *     TreeNode(int x) { val \u003D x\u003B }\u000D\u000A * }\u000D\u000A */\u000D\u000Apublic class Solution {\u000D\u000A    public TreeNode upsideDownBinaryTree(TreeNode root) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}' },{'value': 'python', 'text': 'Python', 'defaultCode': '# Definition for a binary tree node.\u000D\u000A# class TreeNode(object):\u000D\u000A#     def __init__(self, x):\u000D\u000A#         self.val \u003D x\u000D\u000A#         self.left \u003D None\u000D\u000A#         self.right \u003D None\u000D\u000A\u000D\u000Aclass Solution(object):\u000D\u000A    def upsideDownBinaryTree(self, root):\u000D\u000A        \u0022\u0022\u0022\u000D\u000A        :type root: TreeNode\u000D\u000A        :rtype: TreeNode\u000D\u000A        \u0022\u0022\u0022' },{'value': 'c', 'text': 'C', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * struct TreeNode {\u000D\u000A *     int val\u003B\u000D\u000A *     struct TreeNode *left\u003B\u000D\u000A *     struct TreeNode *right\u003B\u000D\u000A * }\u003B\u000D\u000A */\u000D\u000Astruct TreeNode* upsideDownBinaryTree(struct TreeNode* root) {\u000D\u000A    \u000D\u000A}' },{'value': 'csharp', 'text': 'C#', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * public class TreeNode {\u000D\u000A *     public int val\u003B\u000D\u000A *     public TreeNode left\u003B\u000D\u000A *     public TreeNode right\u003B\u000D\u000A *     public TreeNode(int x) { val \u003D x\u003B }\u000D\u000A * }\u000D\u000A */\u000D\u000Apublic class Solution {\u000D\u000A    public TreeNode UpsideDownBinaryTree(TreeNode root) {\u000D\u000A        \u000D\u000A    }\u000D\u000A}' },{'value': 'javascript', 'text': 'JavaScript', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * function TreeNode(val) {\u000D\u000A *     this.val \u003D val\u003B\u000D\u000A *     this.left \u003D this.right \u003D null\u003B\u000D\u000A * }\u000D\u000A */\u000D\u000A/**\u000D\u000A * @param {TreeNode} root\u000D\u000A * @return {TreeNode}\u000D\u000A */\u000D\u000Avar upsideDownBinaryTree \u003D function(root) {\u000D\u000A    \u000D\u000A}\u003B' },{'value': 'ruby', 'text': 'Ruby', 'defaultCode': '# Definition for a binary tree node.\u000D\u000A# class TreeNode\u000D\u000A#     attr_accessor :val, :left, :right\u000D\u000A#     def initialize(val)\u000D\u000A#         @val \u003D val\u000D\u000A#         @left, @right \u003D nil, nil\u000D\u000A#     end\u000D\u000A# end\u000D\u000A\u000D\u000A# @param {TreeNode} root\u000D\u000A# @return {TreeNode}\u000D\u000Adef upside_down_binary_tree(root)\u000D\u000A    \u000D\u000Aend' },{'value': 'swift', 'text': 'Swift', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * public class TreeNode {\u000D\u000A *     public var val: Int\u000D\u000A *     public var left: TreeNode?\u000D\u000A *     public var right: TreeNode?\u000D\u000A *     public init(_ val: Int) {\u000D\u000A *         self.val \u003D val\u000D\u000A *         self.left \u003D nil\u000D\u000A *         self.right \u003D nil\u000D\u000A *     }\u000D\u000A * }\u000D\u000A */\u000D\u000Aclass Solution {\u000D\u000A    func upsideDownBinaryTree(root: TreeNode?) \u002D\u003E TreeNode? {\u000D\u000A        \u000D\u000A    }\u000D\u000A}' },{'value': 'golang', 'text': 'Go', 'defaultCode': '/**\u000D\u000A * Definition for a binary tree node.\u000D\u000A * type TreeNode struct {\u000D\u000A *     Val int\u000D\u000A *     Left *TreeNode\u000D\u000A *     Right *TreeNode\u000D\u000A * }\u000D\u000A */\u000D\u000Afunc upsideDownBinaryTree(root *TreeNode) *TreeNode {\u000D\u000A    \u000D\u000A}' },],&#10;        '156_483970',&#10;        156,&#10;        '/problems/binary-tree-upside-down/interpret_solution/',&#10;        '/problems/binary-tree-upside-down/submit/',&#10;        '/submissions/detail/0/',&#10;        '/problems/0/',&#10;        'Binary Tree Upside Down',&#10;        '[]',&#10;        '{\u000D\u000A  \u0022name\u0022: \u0022upsideDownBinaryTree\u0022,\u000D\u000A  \u0022params\u0022: [\u000D\u000A    {\u000D\u000A      \u0022name\u0022: \u0022root\u0022,\u000D\u000A      \u0022type\u0022: \u0022TreeNode\u0022,\u000D\u000A      \u0022dealloc\u0022: false\u000D\u000A    }\u000D\u000A  ],\u000D\u000A  \u0022return\u0022: {\u000D\u000A    \u0022type\u0022: \u0022TreeNode\u0022,\u000D\u000A    \u0022dealloc\u0022: true\u000D\u000A  }\u000D\u000A}',&#10;        true,&#10;        [{&quot;question_title_slug&quot;: &quot;reverse-linked-list&quot;, &quot;question_title&quot;: &quot;Reverse Linked List&quot;, &quot;difficulty&quot;: &quot;E&quot;}],&#10;        ''&#10;        );">
+    <input type="hidden" name="csrfmiddlewaretoken" value="oLl2CcSDhaIAX136ga1V0O00TKppi4jw" />
+    <div class="row" style="margin-bottom:12px;">
+      <div class="col-md-12">
+        <select class="form-control select mbm ng-pristine ng-valid select2-hidden-accessible" name="lang" ng-model="aceCtrl.selectedLang" ng-options="lang.text for lang in aceCtrl.langs track by lang.value" tabindex="-1" aria-hidden="true"><option value="cpp">C++</option><option value="java">Java</option><option value="python">Python</option><option value="c">C</option><option value="csharp">C#</option><option value="javascript">JavaScript</option><option value="ruby">Ruby</option><option value="swift">Swift</option><option value="golang">Go</option></select><span class="select2 select2-container select2-container--bootstrap" dir="ltr" style="width: 220px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-lang-fe-container"><span class="select2-selection__rendered" id="select2-lang-fe-container" title="C++">C++</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+        <refresh-button><!-- reset button -->
+<style>
+.reset-btn + .popover {
+  white-space: nowrap;
+  max-width: none;
+}
+
+.reset-btn + .popover &gt; .arrow {
+  top: auto !important;
+}
+</style>
+
+<span data-toggle="modal" data-target="#confirmReset">
+  <button class="reset-btn btn btn-default" type="button" data-original-title="" title="">
+    <span class="fa fa-refresh"></span>
+  </button>
+</span>
+<div class="modal fade" id="confirmReset" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Reset to default code
+          definition</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to reset your code?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="aceCtrl.resetCode()" data-dismiss="modal">Reset Code
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</refresh-button>
+        <code-button><!-- get latest code -->
+<style>
+.code-btn + .popover {
+  white-space: nowrap;
+  max-width: none;
+}
+
+.code-btn + .popover &gt; .arrow {
+  top: auto !important;
+}
+</style>
+
+<span data-toggle="modal" data-target="#confirmRecent">
+  <button class="code-btn btn btn-primary" type="button" data-original-title="" title="">
+    <span class="fa fa-code"></span>
+  </button>
+</span>
+<span ng-show="aceCtrl.is_error" class="alert alert-danger ng-binding ng-hide">
+  
+</span>
+<span ng-show="aceCtrl.is_alert" class="alert alert-info ng-hide">
+  Already the latest.
+</span>
+<span ng-show="aceCtrl.is_success" class="alert alert-success ng-hide">
+  Load successfully.
+</span>
+<div class="modal fade" id="confirmRecent" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">
+          <span aria-hidden="true">×</span><span class="sr-only">Close</span>
+        </button>
+        <h4 class="modal-title">Replace current code with last submitted
+          code</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to replace the current code with your last
+        submitted code?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-primary" ng-click="aceCtrl.recentCode()" data-dismiss="modal">Replace
+          Code
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</code-button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div style="float:left; width:100%;padding-right:15px;">
+          <div ng-switch="" on="aceCtrl.selectedLang.value">
+            
+              <!-- ngSwitchWhen: cpp --><div ui-ace="aceCtrl.aceOption('cpp')" ng-model="aceCtrl.code.cpp" ng-switch-when="cpp" class="editor ng-scope ng-pristine ng-valid ace_editor ace-tm"><div style="position: absolute;"></div><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; height: 19px; width: 8.40156px; left: 46px; top: 0px;"></textarea><div class="ace_gutter"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="margin-top: 0px; height: 511px; width: 42px;"><div class="ace_gutter-cell " style="height: 19px;">1</div></div><div class="ace_gutter-active-line" style="top: 0px; height: 19px;"></div></div><div class="ace_scroller" style="left: 42px; right: 0px; bottom: 0px;"><div class="ace_content" style="margin-top: 0px; width: 923px; height: 511px; margin-left: 0px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 676.125px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_active-line" style="height:19px;top:0px;left:0;right:0;"></div></div><div class="ace_layer ace_text-layer" style="padding: 0px 4px;"><div class="ace_line_group" style="height:19px"><div class="ace_line" style="height:19px"></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="left: 4px; top: 0px; width: 8.40156px; height: 19px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 20px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 20px; height: 19px;"></div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 20px; left: 42px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 20px; width: 923px;"></div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;"></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div>
+            
+              <!-- ngSwitchWhen: java -->
+            
+              <!-- ngSwitchWhen: python -->
+            
+              <!-- ngSwitchWhen: c -->
+            
+              <!-- ngSwitchWhen: csharp -->
+            
+              <!-- ngSwitchWhen: javascript -->
+            
+              <!-- ngSwitchWhen: ruby -->
+            
+              <!-- ngSwitchWhen: swift -->
+            
+              <!-- ngSwitchWhen: golang -->
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="action">
+      
+        <div class="row">
+          <div class="col-md-8 col-sm-7">
+            <div ng-class="aceCtrl.interpret.enable ? 'visible' : 'invisible'" class="visible">
+              <input type="hidden" name="typed_code" />
+              
+                <!-- interpret_solution -->
+                <label for="custom_testcase">
+                  Custom Testcase  
+                  <input type="checkbox" id="custom_testcase" name="custom_testcase" ng-model="aceCtrl.interpret.isCustomTestCase" class="ng-pristine ng-valid" />
+                </label>
+              
+              <div data-ng-show="aceCtrl.interpret.isCustomTestCase" class="ng-hide">
+                <div class="row">
+                  <div class="ds-viewer-container col-lg-12">
+                    <textarea class="form-control ng-pristine ng-valid" rows="5" id="textArea" name="data_input" ng-model="aceCtrl.interpret.testCase" ng-focus="aceCtrl.interpret.showStructure = true;" ng-blur="aceCtrl.interpret.showStructure = false;" ng-keyup="aceCtrl.interpret.renderStructure()" ng-click="aceCtrl.interpret.renderStructure()"></textarea>
+                    <div class="data-structure-viewer ng-hide" ng-show="aceCtrl.interpret.showStructure &amp;&amp;&#10;                                  aceCtrl.interpret.validStructure &amp;&amp;&#10;                                  !aceCtrl.interpret.isMobile"></div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <span>One line for one parameter.</span>
+                    <div class="dropdown">
+                      <a id="dLabel" class="menu-links" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Hint
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li><a href="/faq/#binary-tree">Binary tree</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="col-md-4 col-sm-5">
+            <div class="pull-right">
+              
+                <span id="button0" ng-show="aceCtrl.interpret.enable" data-ng-disabled="aceCtrl.interpret.running" class="btn btn-default btn-pad ng-isolate-scope" ng-click="aceCtrl.interpret.runCode()" oj-button="run" data-toggle="tooltip" title="" data-original-title="Shortcut: Command + '">Run Code</span>
+              
+              <button id="button1" ng-disabled="aceCtrl.interpret.running" class="btn btn-primary btn-pad ng-isolate-scope" type="submit" ng-click="aceCtrl.interpret.submitCode()" oj-button="submit" data-toggle="tooltip" title="" data-original-title="Shortcut: Command + enter">Submit Solution</button>
+            </div>
+          </div>
+        </div>
+        <interpret-result><div class="row ng-animate animated-add fadeOutRight-add ng-hide" data-ng-show="!(aceCtrl.interpret.status | isEmpty)" ng-class="!(aceCtrl.interpret.status | isEmpty) ? 'animated' : 'animated fadeOutRight'">
+  <div class="col-lg-12">
+    <h4>
+      Run Code Status:
+      <span id="result_state" ng-class="{'blue': 'text-info', 'green': 'text-success', 'red': 'text-danger'}[aceCtrl.interpret.status.color]" class="ng-binding">
+        
+      </span>
+    </h4>
+  </div>
+  <div class="col-lg-12">
+    <div class="text-danger ng-binding ng-hide" data-ng-show="aceCtrl.interpret.info.error">
+      
+    </div>
+  </div>
+</div>
+
+<div class="row top-buffer ng-animate animated-add fadeOutRight-add ng-hide" ng-hide="(aceCtrl.interpret.run_counter &lt;= 1) &amp;&amp; (aceCtrl.interpret.result | isEmpty)" ng-class="!(aceCtrl.interpret.result | isEmpty) ? 'animated fadeInLeft' : 'animated fadeOutRight'">
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h5>
+          Run Code Result:
+          <button type="button" class="close" ng-click="aceCtrl.dismissInterpretResult()" aria-label="Close"><span aria-hidden="true">×</span></button>
+        </h5>
+      </div>
+      <div class="panel-body">
+        <div class="col-lg-12">
+          <h5>Your input</h5>
+          <pre class="ng-binding"></pre>
+        </div>
+
+        <div class="col-lg-12 ng-hide" data-ng-show="!!aceCtrl.interpret.result.code_output.length">
+          <h5>Your stdout</h5>
+          <pre><!-- ngRepeat: val in aceCtrl.interpret.result.code_output track by $index --></pre>
+        </div>
+
+        <div ng-controller="DiffCtrl as diffCtrl" class="ng-scope">
+          <div class="col-lg-6">
+            <h5>Your answer</h5>
+            <pre ng-hide="aceCtrl.interpret.show_diff" class=""><!-- ngRepeat: val in aceCtrl.interpret.result.code_answer track by $index --></pre>
+            <pre ng-show="aceCtrl.interpret.show_diff" class="ng-hide"><span ng-bind-html="diffCtrl.actual" class="ng-binding"></span></pre>
+          </div>
+
+          <div class="col-lg-6">
+            <h5>Expected answer</h5>
+            <pre ng-hide="aceCtrl.interpret.show_diff" class=""><!-- ngRepeat: val in aceCtrl.getExpectedAns() track by $index --><span ng-repeat="val in aceCtrl.getExpectedAns() track by $index" class="ng-binding ng-scope"><br /></span><!-- end ngRepeat: val in aceCtrl.getExpectedAns() track by $index --></pre>
+            <pre ng-show="aceCtrl.interpret.show_diff" class="ng-hide"><span ng-bind-html="diffCtrl.expect" class="ng-binding"></span></pre>
+          </div>
+
+          <div class="col-lg-12">
+            <a class="btn btn-sm btn-info ng-binding" ng-disabled="!aceCtrl.interpret.diffReady" ng-click="aceCtrl.interpret.toggleDiff()" disabled="disabled">Show Diff</a>
+          </div>
+        </div>
+
+        <div class="col-lg-12 ng-hide" data-ng-show="aceCtrl.interpret.result.status_runtime">
+          <h5 class="ng-binding">Runtime: </h5>
+        </div>
+        <div class="col-lg-12">
+          <p class="comment">Note: is Run Code inconsistent with Submit Solution? If you are using global variables or C/C++, check <a href="/faq/#different-output">this</a> out.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</interpret-result>
+        <oj-submission><style>
+  .pad-left {
+    padding-left: 10px;
+  }
+  .pad-right {
+    padding-right: 30px;
+  }
+  .text-default {
+    color: #333;
+  }
+  .testcase-label {
+    color: #B25150;
+    position: absolute;
+    left: 0;
+  }
+  .testcase-info, .stdout-info {
+    display: block;
+    font-weight: bold;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre;
+    cursor: pointer;
+  }
+  .testcase-row-expand .testcase-info {
+    max-height: 80px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    margin: -5px 0;
+    padding: 5px 0;
+  }
+  .stdout-info {
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+  .testcase-table-re, .testcase-table-wa {
+    border: 1px solid rgba(169, 68, 66, 0.5);
+    border-collapse: collapse;
+    border-radius: 4px;
+    border-spacing: 5px;
+    overflow: hidden;
+    padding: 10px 23px 25px 23px;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    font-size: 14px;
+    line-height: 20px;
+    background: transparent;
+    box-shadow: 0 0 4px rgba(169, 68, 66, 0.5);
+  }
+  .testcase-table-re .testcase-table-row {
+    padding: 3px 0px 3px 15em;
+  }
+  .testcase-table-wa .testcase-table-row {
+    padding: 3px 0px 3px 8em;
+  }
+  .testcase-table-wa .testcase-table-row,
+  .testcase-table-re .testcase-table-row {
+    position: relative;
+    padding-top: 10px;
+    border-bottom: 1px solid rgba(228, 154, 152, 0.5);
+    padding-bottom: 14px;
+  }
+  .btn-outline {
+    border: 1px solid #cfcfcf;
+    background: 0 0;
+  }
+  .btn-alt {
+    border-radius: 2em;
+    padding: 8px 18px;
+  }
+  #reveal-solution {
+    margin-left: 15px;
+  }
+  .popover {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+</style>
+
+
+<div>
+  <span ng-show="aceCtrl.interpret.running" id="submit_wait" class="loading-center ng-hide">
+    <img ng-src="/static/images/loading.gif" class="img-rounded" src="/static/images/loading.gif" />
+  </span>
+  <div ng-show="aceCtrl.interpret.submit_error" id="submit_error" class="btn text-danger ng-hide">Submit failed, try again
+    please.
+  </div>
+  <div ng-show="aceCtrl.interpret.submit_warning" id="submit_warning" class="btn text-danger ng-binding ng-hide"></div>
+  <div ng-show="aceCtrl.interpret.submit_result" id="result" class="ng-hide">
+    <hr />
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-12">
+            <h4>Submission Result:
+              <a id="result-state" href="" ng-class="{'blue': 'text-info', 'green': 'text-success', 'red': 'text-danger'}[statusColor]" class="ng-binding text-info">
+                Pending
+              </a>
+              <i class="fa fa-question-circle text-danger ng-hide" ng-show="statusText === 'Time Limit Exceeded'" data-toggle="popover" data-placement="top" data-content="TLE means all your outputs (may be empty) matches the expected output up to the last executed test case. If the last executed test case is large, your algorithm may be correct but not efficient enough. If you believe your code should pass the judge, please raise this issue by posting in Discuss or sending an email to admin." data-trigger="hover" data-original-title="" title=""></i>
+              <i class="fa fa-question-circle text-success ng-hide" ng-show="statusText === 'Accepted'" data-toggle="popover" data-placement="top" data-content="Accepted means your program passes all test cases, however it does not necessarily mean your algorithm is optimal. If you believe your code has bugs, please submit a 'missing test case' report in Discuss or sending an email to admin." data-trigger="hover" data-original-title="" title=""></i>
+              <i class="fa fa-question-circle text-danger ng-hide" ng-show="statusText === 'Timeout'" data-toggle="popover" data-placement="top" data-content="Timeout means the server queue is busy and could not process your submission for the time being. Please wait for about 10 seconds and submit again." data-trigger="hover" data-original-title="" title=""></i>
+
+              <span data-ng-show="statusText !== 'Pending' &amp;&amp; statusText !== 'Judging'" class="ng-hide">
+                <a id="more-details" class="btn-left-space btn btn-outline btn-alt" href="">More Details <i class="fa fa-chevron-right"></i></a>
+              </span>
+            </h4>
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div data-ng-show="statusText === 'Accepted'" class="ng-fade ng-hide">
+              <div>
+                <!-- unsolved next challenges -->
+                <div ng-show="aceCtrl.interpret.next_challenge_pairs.length" class="">
+                  <div>
+                    <span>Next challenges: </span>
+                    <!-- ngRepeat: pair in aceCtrl.interpret.next_challenge_pairs --><span ng-repeat="pair in aceCtrl.interpret.next_challenge_pairs" class="ng-scope ng-animate">
+                      <a class="btn btn-xs btn-primary ng-binding" ng-href="/problems/reverse-linked-list" ng-click="ga('send', 'event', 'next-challenge', 'click');" href="/problems/reverse-linked-list">
+                        (E) Reverse Linked List
+                      </a>
+                    </span><!-- end ngRepeat: pair in aceCtrl.interpret.next_challenge_pairs -->
+                  </div>
+                </div>
+              </div>
+              <h4>
+                <small>Share your acceptance!</small>
+              </h4>
+              <div class="addthis_sharing_toolbox" data-title="#LeetCode# I have solved Binary Tree Upside Down. Come and join the fun!"></div>
+            </div>
+            <div class="ng-fade ng-hide" data-ng-show="!aceCtrl.interpret.running &amp;&amp; statusText === 'Accepted' &amp;&amp; aceCtrl.first_ac_solution_url">
+              <p>Congratulations, you've just <i>unlocked</i> a solution! <a id="reveal-solution" class="btn btn-outline btn-alt" href="" target="_blank">Reveal Solution <i class="fa fa-chevron-right"></i></a></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="last_executed_testcase_output_row" ng-show="showLastTestCase()" class="ng-hide">
+          <div class="alert alert-danger col-md-12 testcase-table-re">
+            <div id="runtime_error_row" ng-show="runtimeError" class="testcase-table-row ng-hide">
+              <span class="pad-left testcase-label">Runtime Error Message:</span>
+              <span id="runtime_error_output" class="text-danger ng-binding testcase-info"></span>
+            </div>
+            <div class="testcase-table-row">
+              <span class="pad-left testcase-label">Last executed input:</span>
+              <span id="last_executed_testcase_output" class="text-danger ng-binding testcase-info"></span>
+            </div>
+            <div class="testcase-table-row ng-hide" ng-show="resultStdOutput">
+              <span class="pad-left testcase-label">Stdout:</span>
+              <span id="runtime_error_stdout" class="ng-binding stdout-info text-default"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="result_code_output_row" ng-show="resultCodeOutput" class="ng-hide">
+          <div id="result_code_output" class="alert alert-danger ng-binding"></div>
+        </div>
+
+        <div id="wa_output" ng-show="showWaTestCase()" class="ng-hide">
+          <div class="alert alert-danger col-md-12 testcase-table-wa">
+            <div class="testcase-table-row">
+              <span class="pad-left testcase-label">Input:</span>
+              <span id="result_wa_testcase_input" class="testcase-info text-default ng-binding"></span>
+            </div>
+            <div class="testcase-table-row">
+              <span class="pad-left testcase-label">Output:</span>
+              <span id="result_wa_testcase_output" class="testcase-info text-danger ng-binding"></span>
+            </div>
+            <div class="testcase-table-row">
+              <span class="pad-left testcase-label">Expected:</span>
+              <span id="result_wa_testcase_expected" class="testcase-info text-success ng-binding"></span>
+            </div>
+            <div class="testcase-table-row ng-hide" ng-show="resultStdOutput">
+              <span class="pad-left testcase-label">Stdout:</span>
+              <span id="result_wa_testcase_std_output" class="stdout-info text-default ng-binding"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</oj-submission>
+      
+    </div>
+  </div>
+
+</div>
+
+    </div>
+
+    
+    <footer class="site-footer" style="margin-top: -138px;">
+      <div class="container">
+        <hr />
+        <p class="text-center">
+          <a href="/faq/">Frequently Asked Questions</a> |
+          <a href="/tos/">Terms of Service</a>
+        </p>
+        <p class="text-center">
+          <iframe class="iubenda-ibadge" scrolling="no" frameborder="0" allowtransparency="true" style="width:105px; height:22px;"></iframe>
+        </p>
+        <p class="text-center">Copyright © 2016 LeetCode</p>
+      </div>
+    </footer>
+    
+
+    <a href="mailto:admin@leetcode.com?subject=Feedback" id="chat-link" target="_blank">
+    <i class="glyphicon glyphicon-envelope"></i>Send Feedback</a>
+
+    <script>
+      (function($, w, d){
+        var loader = function () {
+          var s = d.createElement("script"),
+              tag = d.getElementsByTagName("script")[0];
+          s.src = "//cdn.iubenda.com/iubenda.js";
+          tag.parentNode.insertBefore(s,tag);
+          s.onload = setFooterStyles;
+        };
+        if (w.addEventListener) {
+          w.addEventListener("load", loader, false);
+        } else if (w.attachEvent) {
+          w.attachEvent("onload", loader);
+        } else { w.onload = loader; }
+
+        $(function() {
+          $('#navbar-right img').addClass('img-rounded');
+          setFooterStyles();
+        });
+
+        function setFooterStyles() {
+          var $footer = $('.site-footer'),
+              height = $footer.outerHeight();
+          $footer.css('margin-top', -height);
+          $('.content-wrapper').css('padding-bottom', height);
+        }
+      }(jQuery, window, document));
+    </script>
+
+    <script src="/static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/static/bootstrap-table/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript" src="/static/CACHE/js/b8154b935db7.js"></script>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o)
+  ,m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a
+  ,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga'
+  );
+  ga('create', 'UA-6849839-6', 'leetcode.com');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+</script>
+     
+<script>
+  var pageData = {
+    questionId: '156',
+    questionTitleSlug: 'binary-tree-upside-down',
+    payment: true,
+    loginUrl: '/accounts/login/?next=/problems/binary-tree-upside-down/',
+    unpaidUrl: '/unpaid/',
+    isSignedIn: true
+  };
+</script>
+
+<script src="/static/angular-animate/angular-animate.min.js"></script>
+
+<script type="text/javascript" src="/static/CACHE/js/a4348912a531.js"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54828cb901e9e86a" async="async"></script>
+
+    <script>try { ace.config.set("basePath", "/static/ace/src-noconflict/") } catch(err) {}</script>
+  
+
+<div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;"><iframe id="_atssh698" title="AddThis utility frame" src="https://s7.addthis.com/static/sh.70a42bd59f68e6caa20cf9f5.html#rand=0.5667466347515799&amp;iit=1472001456805&amp;tmr=load%3D1472001456574%26core%3D1472001456674%26main%3D1472001456799%26ifr%3D1472001456810&amp;cb=0&amp;cdn=0&amp;md=0&amp;kw=&amp;ab=-&amp;dh=leetcode.com&amp;dr=&amp;du=https%3A%2F%2Fleetcode.com%2Fproblems%2Fbinary-tree-upside-down%2F&amp;href=https%3A%2F%2Fleetcode.com%2Fproblems%2Fbinary-tree-upside-down%2F&amp;dt=Binary%20Tree%20Upside%20Down%20%7C%20LeetCode%20OJ&amp;dbg=0&amp;cap=tc%3D0%26ab%3D0&amp;inst=1&amp;jsl=1&amp;prod=undefined&amp;lng=en-US&amp;ogt=description%2Cimage%2Ctitle&amp;pc=men&amp;pub=ra-54828cb901e9e86a&amp;ssl=1&amp;sid=57bcf5b07f075ae6&amp;srpl=1&amp;srf=0.01&amp;srx=1&amp;ver=300&amp;xck=0&amp;xtr=0&amp;og=title%3DBinary%2520Tree%2520Upside%2520Down%2520%257C%2520LeetCode%2520OJ%26image%3D%252Fstatic%252Fimages%252Flogolarge.jpg%26description%3DGiven%2520a%2520binary%2520tree%2520where%2520all%2520the%2520right%2520nodes%2520are%2520either%2520leaf%2520nodes%2520with%2520a%2520sibling%2520(a%2520left%2520node%2520that%2520shares%2520the%2520same%2520parent%2520node)%2520or%2520empty%252C%2520flip%2520it%2520upside%2520down%2520and%2520turn%2520it%2520into%2520a%2520tree%2520where%2520the%2520original%2520right%2520nodes%2520turned%2520into%2520left%2520leaf%2520nodes.%2520Return%2520the%2520new%2520root.%250A%250A%250AFor%2520example%253A%250AGiven%2520a%2520binary%2520tree%2520%257B1%252C2%252C3%252C4%252C5%257D%252C%250A%250A%2520%2520%2520%25201%250A%2520%2520%2520%252F%2520%255C%250A%2520%25202%2520%2520%25203%250A%2520%252F%2520%255C%250A4%2520%2520%25205%250A%250A%250A%250Areturn%2520the%2520root%2520of%2520the%2520binary%2520tree%2520%255B4%252C5%252C2%252C%2523%252C%2523%252C3%252C1%255D.%250A%250A%2520%2520%25204%250A%2520%2520%252F%2520%255C%250A%25205%2520%2520%25202%250A%2520%2520%2520%2520%252F%2520%255C%250A%2520%2520%25203%2520%2520%25201%2520%2520%250A%250A%250A%250Aconfused%2520what%2520%2522%257B1%252C%2523%252C2%252C3%257D%2522%2520means%253F%2520%253E%2520read%2520more%2520on%2520how%2520binary%2520tree%2520is%2520serialized%2520on%2520OJ.%250A%250AOJ's%2520Binary%2520Tree%2520Serialization%253A%250A%250AThe%2520serialization%2520of%2520a%2520binary%2520tree%2520follows%2520a%2520level%2520order%2520traversal%252C%2520where%2520'%2523'%2520signifies%2520a%2520path%2520terminator%2520where%2520no%2520node%2520exists%2520below.%250A%250A%250AHere's%2520an%2520example%253A%250A%250A%2520%2520%25201%250A%2520%2520%252F%2520%255C%250A%25202%2520%2520%25203%250A%2520%2520%2520%2520%252F%250A%2520%2520%25204%250A%2520%2520%2520%2520%255C%250A%2520%2520%2520%2520%25205%250A%250AThe%2520above%2520binary%2520tree%2520is%2520serialized%2520as%2520%2522%257B1%252C2%252C3%252C%2523%252C%2523%252C4%252C%2523%252C%2523%252C5%257D%2522.&amp;csi=undefined&amp;rev=v7.4.4-wp&amp;ct=1&amp;xld=1&amp;xd=1" style="height: 1px; width: 1px; position: absolute; top: 0px; z-index: 100000; border: 0px; left: 0px;"></iframe></div><style id="service-icons-0"></style></body></html>
